@@ -1,0 +1,2421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoría y Participación - Derecho Penal II</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .titulo-principal {
+            text-align: center;
+            color: white;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            font-weight: bold;
+        }
+
+        .subtitulo-principal {
+            text-align: center;
+            color: #FFD700;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .pizarra {
+            background: #f5f5dc;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .seccion {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 4px solid #8B0000;
+        }
+        
+        .seccion:last-child {
+            border-bottom: none;
+        }
+        
+        .seccion-titulo {
+            font-size: 2em;
+            color: #8B0000;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: linear-gradient(to right, #FFE4B5, transparent);
+            border-left: 6px solid #8B0000;
+            border-radius: 8px;
+        }
+        
+        .icono {
+            font-size: 1.8em;
+        }
+        
+        .contenido {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 6px solid #B22222;
+            line-height: 1.8;
+        }
+        
+        .subseccion {
+            margin: 25px 0;
+            padding: 20px;
+            background: #FFF8DC;
+            border-radius: 8px;
+            border-left: 4px solid #DAA520;
+        }
+
+        .subseccion-titulo {
+            font-size: 1.4em;
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .teoria {
+            margin: 20px 0;
+            padding: 20px;
+            background: #F0F8FF;
+            border-radius: 10px;
+            border: 3px solid #4682B4;
+        }
+
+        .teoria-titulo {
+            font-size: 1.3em;
+            color: #1e3c72;
+            margin-bottom: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .teoria-contenido {
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .definicion {
+            background: #E6F3FF;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #0066CC;
+        }
+
+        .definicion-titulo {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #0066CC;
+            margin-bottom: 10px;
+        }
+        
+        .articulo {
+            background: #FFF9E6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 3px solid #FFB84D;
+            font-family: 'Courier New', monospace;
+        }
+
+        .articulo-numero {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #CC6600;
+            margin-bottom: 15px;
+        }
+
+        .articulo-texto {
+            color: #333;
+            line-height: 1.8;
+            margin-left: 20px;
+        }
+        
+        .ejemplo {
+            background: #F0FFF0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #228B22;
+        }
+
+        .ejemplo-titulo {
+            font-weight: bold;
+            color: #228B22;
+            margin-bottom: 12px;
+            font-size: 1.15em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ejemplo-contenido {
+            color: #2d5016;
+            line-height: 1.7;
+        }
+        
+        .critica {
+            background: #FFE6E6;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #DC143C;
+        }
+
+        .critica-titulo {
+            font-weight: bold;
+            color: #DC143C;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .ventaja {
+            background: #E8F5E9;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .ventaja-titulo {
+            font-weight: bold;
+            color: #2E7D32;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tabla th {
+            background: #8B0000;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        .tabla td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        .tabla tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .tabla tr:hover {
+            background: #f0f0f0;
+        }
+        
+        .nota-importante {
+            background: #FFF3CD;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #FF9800;
+            margin: 20px 0;
+        }
+
+        .nota-titulo {
+            font-weight: bold;
+            color: #F57F17;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .requisitos {
+            background: #E1F5FE;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #0288D1;
+        }
+
+        .requisitos-titulo {
+            font-weight: bold;
+            color: #01579B;
+            margin-bottom: 12px;
+            font-size: 1.15em;
+        }
+        
+        .comparacion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .box-comparacion {
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid;
+        }
+
+        .box-autor {
+            background: #E3F2FD;
+            border-color: #1976D2;
+        }
+
+        .box-participe {
+            background: #FFF3E0;
+            border-color: #F57C00;
+        }
+
+        .box-titulo {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+        }
+
+        .box-autor .box-titulo {
+            color: #1565C0;
+        }
+
+        .box-participe .box-titulo {
+            color: #E65100;
+        }
+        
+        .formula {
+            background: #E8EAF6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #1e3c72;
+            border: 3px solid #5C6BC0;
+        }
+        
+        .lista-ordenada {
+            margin-left: 30px;
+            line-height: 2;
+        }
+
+        .lista-ordenada li {
+            margin-bottom: 12px;
+        }
+
+        .lista-desordenada {
+            margin-left: 30px;
+            line-height: 1.9;
+        }
+
+        .lista-desordenada li {
+            margin-bottom: 10px;
+        }
+        
+        .esquema {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 3px solid #9C27B0;
+        }
+
+        .esquema-titulo {
+            font-size: 1.3em;
+            color: #6A1B9A;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nivel {
+            margin-left: 20px;
+            padding: 12px;
+            border-left: 3px solid #CE93D8;
+            margin-bottom: 10px;
+        }
+
+        .nivel-1 {
+            background: #F3E5F5;
+        }
+
+        .nivel-2 {
+            background: #E1BEE7;
+        }
+
+        .nivel-3 {
+            background: #CE93D8;
+            color: white;
+        }
+        
+        .caso-practico {
+            background: #FFF8E1;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 3px solid #FFA726;
+        }
+
+        .caso-titulo {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #E65100;
+            margin-bottom: 15px;
+        }
+
+        .caso-planteamiento {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .caso-solucion {
+            background: #E8F5E9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .destacado {
+            background: #FFE082;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            color: #8B0000;
+        }
+
+        @media (max-width: 768px) {
+            .comparacion {
+                grid-template-columns: 1fr;
+            }
+            
+            .titulo-principal {
+                font-size: 2em;
+            }
+
+            .subtitulo-principal {
+                font-size: 1.1em;
+            }
+            
+            .pizarra {
+                padding: 20px;
+            }
+
+            .seccion-titulo {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo-principal">⚖️ MÓDULO 4: AUTORÍA Y PARTICIPACIÓN</h1>
+        <p class="subtitulo-principal">Derecho Penal II - Prof. Dr. Mauricio Rettig Espinoza</p>
+        
+        <div class="pizarra">
+            
+            <!-- SECCIÓN 1: INTRODUCCIÓN Y POSICIÓN SISTEMÁTICA -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">📍</span>
+                    POSICIÓN SISTEMÁTICA
+                </div>
+                <div class="contenido">
+                    <div class="definicion">
+                        <div class="definicion-titulo">¿Dónde se ubica en la teoría del delito?</div>
+                        La autoría y participación es <strong>parte de la teoría del tipo</strong>. Se analiza para determinar si el sujeto responde penalmente:
+                        <ul class="lista-desordenada" style="margin-top: 10px;">
+                            <li>Por haber <strong>realizado el tipo penal</strong> de la Parte Especial (AUTOR), o</li>
+                            <li>Por haber <strong>participado en el injusto típico</strong> del comportamiento del autor (PARTÍCIPE)</li>
+                        </ul>
+                    </div>
+
+                    <div class="subseccion">
+                        <div class="subseccion-titulo">🔍 Clasificación General</div>
+                        
+                        <div class="comparacion">
+                            <div class="box-comparacion box-autor">
+                                <div class="box-titulo">📌 TIPOS DE AUTORÍA</div>
+                                <p>El sujeto recibe el nombre de <strong>AUTOR</strong></p>
+                                <ul style="margin-top: 10px; line-height: 1.7;">
+                                    <li>Autor inmediato</li>
+                                    <li>Autor mediato</li>
+                                    <li>Coautor</li>
+                                </ul>
+                            </div>
+
+                            <div class="box-comparacion box-participe">
+                                <div class="box-titulo">📌 TIPOS DE PARTICIPACIÓN</div>
+                                <p>El sujeto es un <strong>PARTÍCIPE</strong></p>
+                                <ul style="margin-top: 10px; line-height: 1.7;">
+                                    <li>Inductor (castigado como autor)</li>
+                                    <li>Cómplice</li>
+                                    <li>Encubridor</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nota-importante">
+                        <div class="nota-titulo">⚡ Principio de Accesoriedad</div>
+                        <p><strong>La participación es accesoria a la autoría.</strong></p>
+                        <p style="margin-top: 10px;">Es posible concebir autoría sin participación, pero NO al revés. La participación depende de que exista una conducta de autoría.</p>
+                    </div>
+
+                    <div class="subseccion">
+                        <div class="subseccion-titulo">📊 Tipos de Concurrencia</div>
+                        
+                        <table class="tabla">
+                            <tr>
+                                <th style="width: 30%;">Tipo</th>
+                                <th>Características</th>
+                                <th>Ejemplo</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Concurrencia Necesaria</strong></td>
+                                <td>La estructura del tipo presupone la concurrencia de 2 o más personas</td>
+                                <td>Incesto (art. 375)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Concurrencia Eventual</strong></td>
+                                <td>La descripción típica permite cometerlos por una o varias personas</td>
+                                <td>Homicidio (art. 391)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: TEORÍAS SOBRE EL CONCEPTO DE AUTOR -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🎓</span>
+                    TEORÍAS SOBRE EL CONCEPTO DE AUTOR
+                </div>
+                <div class="contenido">
+                    
+                    <!-- TEORÍA 1: CONCEPTO UNITARIO -->
+                    <div class="teoria">
+                        <div class="teoria-titulo">1️⃣ CONCEPTO UNITARIO DE AUTOR</div>
+                        <div class="teoria-contenido">
+                            <div class="definicion">
+                                <div class="definicion-titulo">Definición</div>
+                                <strong>Autor</strong> es el que aporta una <strong>condición para la causación del resultado típico</strong>. Son todos los que participan en la producción de un resultado.
+                            </div>
+
+                            <div style="margin: 15px 0; padding: 15px; background: #F5F5F5; border-radius: 8px;">
+                                <p><strong>Base doctrinal:</strong> Teoría causalista</p>
+                                <ul class="lista-desordenada" style="margin-top: 10px;">
+                                    <li><strong>Teoría de la equivalencia de las condiciones</strong></li>
+                                    <li>Método de la supresión mental hipotética</li>
+                                    <li>Niega trascendencia al principio de accesoriedad</li>
+                                </ul>
+                            </div>
+
+                            <div style="margin: 15px 0; padding: 15px; background: #E3F2FD; border-radius: 8px;">
+                                <p><strong>Consecuencia:</strong> NO distingue entre autoría y participación. Todos los que intervienen causalmente son autores.</p>
+                            </div>
+
+                            <div class="critica">
+                                <div class="critica-titulo">❌ CRÍTICAS</div>
+                                <ul class="lista-desordenada">
+                                    <li><strong>Amplía forzadamente</strong> los conceptos que describen la conducta ejecutiva en la Parte Especial</li>
+                                    <li><strong>No matiza las responsabilidades</strong> según la objetiva importancia de la contribución</li>
+                                    <li><strong>Es inadecuado para delitos especiales:</strong> La concurrencia causal NO puede convertir en obligado a un tercero en quien NO concurre la cualificación</li>
+                                </ul>
+                            </div>
+
+                            <div class="ventaja">
+                                <div class="ventaja-titulo">✅ APLICACIÓN ACTUAL</div>
+                                <p>La doctrina alemana admite el concepto unitario <strong>sólo en los delitos imprudentes</strong>:</p>
+                                <ul class="lista-desordenada" style="margin-top: 10px;">
+                                    <li>No contienen una descripción determinada de la conducta</li>
+                                    <li>Toda colaboración es autoría accesoria</li>
+                                    <li>No puede hablarse de un dominio final del hecho</li>
+                                </ul>
+                            </div>
+
+                            <div class="ejemplo">
+                                <div class="ejemplo-titulo">💡 Ejemplo</div>
+                                <div class="ejemplo-contenido">
+                                    A anima a B para que conduzca a exceso de velocidad, B acelera y atropella a un peatón.
+                                    <p style="margin-top: 10px;"><strong>Según concepto unitario:</strong> Ambos son autores porque ambos causaron el resultado.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEORÍA 2: CONCEPTO EXTENSIVO -->
+                    <div class="teoria">
+                        <div class="teoria-titulo">2️⃣ CONCEPTO EXTENSIVO DE AUTOR</div>
+                        <div class="teoria-contenido">
+                            <div class="definicion">
+                                <div class="definicion-titulo">Definición</div>
+                                <strong>Autor</strong> es el que de cualquier manera <strong>realiza el tipo y la lesión del bien jurídico</strong> penalmente tutelado. Todos los que aportan alguna intervención que afecta al hecho son causas del mismo.
+                            </div>
+
+                            <div style="margin: 15px 0; padding: 15px; background: #FFF9E6; border-radius: 8px;">
+                                <p><strong>⚠️ Diferencia con concepto unitario:</strong></p>
+                                <p style="margin-top: 10px;">Aunque en el plano objetivo todos son autores potenciales, la ley obliga a distinguir distintos grados de responsabilidad. Los tipos legales de participación de la Parte General son <strong>causas de restricción de pena</strong>.</p>
+                            </div>
+
+                            <div class="subseccion">
+                                <div class="subseccion-titulo">2a) Teoría Subjetiva o del Dolo del Autor (Von Buri)</div>
+                                <p>Como en el plano objetivo todos son autores potenciales, la diferencia debe buscarse en el <strong>plano subjetivo</strong>:</p>
+                                
+                                <div class="comparacion" style="margin-top: 15px;">
+                                    <div style="background: #E8F5E9; padding: 15px; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                                        <p><strong>AUTOR</strong></p>
+                                        <p style="margin-top: 8px;">Obra con <span class="destacado">ánimo de autor (animus autoris)</span></p>
+                                    </div>
+                                    <div style="background: #FFF3E0; padding: 15px; border-radius: 8px; border-left: 4px solid #FF9800;">
+                                        <p><strong>PARTÍCIPE</strong></p>
+                                        <p style="margin-top: 8px;">Actúa con <span class="destacado">ánimo de partícipe (animus socii)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="subseccion">
+                                <div class="subseccion-titulo">2b) Teoría Subjetiva del Interés</div>
+                                
+                                <div class="comparacion" style="margin-top: 15px;">
+                                    <div style="background: #E3F2FD; padding: 15px; border-radius: 8px; border-left: 4px solid #2196F3;">
+                                        <p><strong>AUTOR</strong></p>
+                                        <p style="margin-top: 8px;">Actúa en <span class="destacado">interés propio</span></p>
+                                    </div>
+                                    <div style="background: #FCE4EC; padding: 15px; border-radius: 8px; border-left: 4px solid #E91E63;">
+                                        <p><strong>PARTÍCIPE</strong></p>
+                                        <p style="margin-top: 8px;">Actúa en <span class="destacado">interés ajeno</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="critica">
+                                <div class="critica-titulo">❌ CRÍTICA FUNDAMENTAL</div>
+                                <p><strong>Subjetiviza la responsabilidad penal</strong></p>
+                                <p style="margin-top: 10px;">En Alemania se castigó como partícipes a sujetos que realizaron <strong>todos los elementos del tipo</strong> y como autores a quienes NO tuvieron intervención material en el hecho (Mir Puig, p. 369)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEORÍA 3: CONCEPTO RESTRINGIDO -->
+                    <div class="teoria">
+                        <div class="teoria-titulo">3️⃣ CONCEPTO RESTRINGIDO DE AUTOR</div>
+                        <div class="teoria-contenido">
+                            <div class="definicion">
+                                <div class="definicion-titulo">Posición Dominante en Alemania y España</div>
+                                <p><strong>NO todo el que interviene en el hecho es autor.</strong> NO todo el que interpone una condición causal del hecho es autor. <span class="destacado">Es preciso algo más.</span></p>
+                            </div>
+
+                            <div style="margin: 15px 0; padding: 20px; background: #E8F5E9; border-radius: 10px; border: 3px solid #4CAF50;">
+                                <p style="font-size: 1.1em; margin-bottom: 12px;"><strong>📌 Principios fundamentales:</strong></p>
+                                <ul class="lista-desordenada">
+                                    <li><strong>Tipos de la PE comprenden SÓLO a la autoría</strong></li>
+                                    <li><strong>Tipos de participación de la PG son causas de extensión de la responsabilidad</strong></li>
+                                    <li>Si no estuvieran en la ley no serían punibles</li>
+                                </ul>
+                            </div>
+
+                            <div class="nota-importante">
+                                <div class="nota-titulo">🎯 Criterio Distintivo</div>
+                                <p>La diferencia entre autor y partícipe es <strong>objetiva</strong>, según la clase de contribución al hecho.</p>
+                            </div>
+
+                            <div class="subseccion">
+                                <div class="subseccion-titulo">Tres Variantes del Concepto Restringido:</div>
+                                
+                                <!-- 3a) TEORÍA OBJETIVO FORMAL -->
+                                <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 10px; border: 3px solid #9C27B0;">
+                                    <p style="font-size: 1.2em; color: #6A1B9A; font-weight: bold; margin-bottom: 15px;">3a) TEORÍA OBJETIVO FORMAL</p>
+                                    <p style="margin-bottom: 10px;"><strong>Autores:</strong> Beling, Gimbernat y Etcheberry</p>
+                                    
+                                    <div class="definicion">
+                                        <div class="definicion-titulo">Definición de Autor</div>
+                                        Es quien realiza, <strong>todos o algunos de los actos ejecutivos previstos en el tipo legal</strong>
+                                    </div>
+
+                                    <div class="ejemplo">
+                                        <div class="ejemplo-titulo">💡 Ejemplos de autoría según esta teoría:</div>
+                                        <div class="ejemplo-contenido">
+                                            <ul class="lista-desordenada">
+                                                <li>Autor es quien clava el puñal en el corazón del sujeto pasivo</li>
+                                                <li>Quien toma el dinero de la caja</li>
+                                                <li>Quien sujeta a la mujer mientras otro la accede carnalmente en la violación</li>
+                                                <li>Quien intimida a la víctima con un arma mientras el coautor saca el dinero</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="definicion">
+                                        <div class="definicion-titulo">Definición de Partícipes</div>
+                                        Despliegan conductas preparatorias o coetáneas que en sí son <strong>atípicas</strong>, pero que la ley tipifica mediante la creación de los tipos subordinados de instigación y complicidad.
+                                    </div>
+
+                                    <div class="ventaja">
+                                        <div class="ventaja-titulo">✅ MÉRITOS</div>
+                                        <ul class="lista-desordenada">
+                                            <li>Otorga <strong>seguridad jurídica</strong></li>
+                                            <li>Vincula la autoría a la tipicidad</li>
+                                            <li>Es un concepto restringido de autor, extraído positivamente de la PE</li>
+                                            <li>Las formas de participación son complementos especialmente legislados</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="critica">
+                                        <div class="critica-titulo">❌ DIFICULTADES</div>
+                                        
+                                        <div style="margin: 15px 0;">
+                                            <p><strong>a) Demasiado amplia en delitos de resultado de medios abiertos:</strong></p>
+                                            <p style="margin-top: 8px;">No ofrece criterios para distinguir entre causación y autoría</p>
+                                            <div class="ejemplo">
+                                                <div class="ejemplo-titulo">Ejemplo:</div>
+                                                <div class="ejemplo-contenido">
+                                                    Todo el que contribuye a la muerte de una persona es causa de su muerte, aunque la contribución haya consistido en prestarle a otro la pistola (Mir Puig, pp. 370-371)
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="margin: 15px 0;">
+                                            <p><strong>b) Deja afuera al autor mediato:</strong></p>
+                                            <p style="margin-top: 8px;">No realiza de propia mano ninguna parte del hecho típico, sino que lo hace por medio de otro, por lo que sería un partícipe, aún cuando el hecho ha sido obra suya.</p>
+                                        </div>
+
+                                        <div style="margin: 15px 0;">
+                                            <p><strong>c) No explica adecuadamente la coautoría:</strong></p>
+                                            <p style="margin-top: 8px;">Cuando alguno de los intervinientes principales no realiza un acto típico en sentido estricto</p>
+                                            <div class="ejemplo">
+                                                <div class="ejemplo-titulo">Ejemplo:</div>
+                                                <div class="ejemplo-contenido">
+                                                    Una hermosa mujer distrae a la víctima para que no se percate que el coautor le está sacando la billetera. La mujer no realiza parte de la conducta típica, pero su aportación a la ejecución es tan decisiva, que resulta imposible no tenerla por obra suya.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="margin: 15px 0;">
+                                            <p><strong>d) Resulta excesivamente limitada en delitos de medios determinados:</strong></p>
+                                            <div class="ejemplo">
+                                                <div class="ejemplo-titulo">Ejemplo:</div>
+                                                <div class="ejemplo-contenido">
+                                                    Lesiones graves (art. 397): Herir, golpear o maltratar de obra a otro
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 3b) TEORÍA OBJETIVO MATERIAL -->
+                                <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 10px; border: 3px solid #FF5722;">
+                                    <p style="font-size: 1.2em; color: #D84315; font-weight: bold; margin-bottom: 15px;">3b) TEORÍA OBJETIVO MATERIAL</p>
+                                    
+                                    <div style="margin: 15px 0; padding: 15px; background: #FFF3E0; border-radius: 8px;">
+                                        <p><strong>Origen:</strong> En las teorías que pretendían limitar la causalidad distinguiendo entre causa y condición. Sólo las condiciones especialmente importantes son causa del resultado.</p>
+                                    </div>
+
+                                    <div class="definicion">
+                                        <div class="definicion-titulo">Definición de Autor</div>
+                                        <ul class="lista-desordenada">
+                                            <li>Es el que realiza una <strong>aportación objetivamente imprescindible</strong>, sin la cual el hecho no se habría podido ejecutar</li>
+                                            <li>El autor aporta una <strong>causa</strong> del resultado</li>
+                                            <li>El cómplice aporta una mera <strong>condición</strong> del mismo</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="critica">
+                                        <div class="critica-titulo">❌ CRÍTICAS</div>
+                                        
+                                        <div style="margin: 15px 0;">
+                                            <p><strong>1. Fórmula vaga que NO sirve como criterio limitador:</strong></p>
+                                            <p style="margin-top: 8px;">NO aporta criterios para distinguir entre autor y cómplice</p>
+                                            <div class="ejemplo">
+                                                <div class="ejemplo-titulo">Ejemplo:</div>
+                                                <div class="ejemplo-contenido">
+                                                    A presta una escalera para que otros entren por la ventana de una casa. Si sin la escalera no hubiera sido posible cometer el delito, su contribución sería indispensable, por lo que conforme a esta teoría A tendría que ser sancionado como autor.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="margin: 15px 0;">
+                                            <p><strong>2. Desconoce la importancia subjetiva en la determinación de la contribución:</strong></p>
+                                            <p style="margin-top: 8px;">Para decidir si concurre la autoría mediata es decisivo saber si el ejecutor material conoce o no la situación concreta en la que actúa</p>
+                                        </div>
+
+                                        <div style="margin: 15px 0;">
+                                            <p><strong>3. La teoría de la equivalencia de las condiciones es correcta pero no suficiente:</strong></p>
+                                            <ul class="lista-desordenada" style="margin-top: 8px;">
+                                                <li>Establecido el vínculo ontológico de la causalidad</li>
+                                                <li>Es necesario la concurrencia de un segundo nivel de análisis normativo de la imputación objetiva del resultado</li>
+                                                <li>Puede ser autor quien no ha causado el resultado (Ej.: Autor mediato)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 3c) TEORÍA DEL DOMINIO DEL HECHO -->
+                                <div style="margin: 20px 0; padding: 25px; background: white; border-radius: 10px; border: 4px solid #1976D2;">
+                                    <p style="font-size: 1.3em; color: #0D47A1; font-weight: bold; margin-bottom: 15px;">3c) TEORÍA DEL DOMINIO DEL HECHO</p>
+                                    <p style="background: #E3F2FD; padding: 12px; border-radius: 6px; margin-bottom: 15px;"><strong>⭐ Opinión dominante en la doctrina alemana actual</strong></p>
+                                    
+                                    <div style="margin: 20px 0; padding: 15px; background: #FFF9E6; border-radius: 8px;">
+                                        <p style="font-weight: bold; margin-bottom: 10px;">📚 Clasificación de teorías del dominio del hecho:</p>
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                                            <div style="background: #E8F5E9; padding: 12px; border-radius: 6px; border-left: 4px solid #4CAF50;">
+                                                <p style="font-weight: bold; color: #2E7D32;">1. Teorías Ontológicas</p>
+                                                <ul style="margin-top: 8px; margin-left: 15px; line-height: 1.7;">
+                                                    <li>a. Teoría ontológica subjetiva</li>
+                                                    <li>b. Teoría ontológica objetiva</li>
+                                                </ul>
+                                            </div>
+                                            <div style="background: #E3F2FD; padding: 12px; border-radius: 6px; border-left: 4px solid #2196F3;">
+                                                <p style="font-weight: bold; color: #1565C0;">2. Teorías Normativas</p>
+                                                <ul style="margin-top: 8px; margin-left: 15px; line-height: 1.7;">
+                                                    <li>a. Teoría normativa de Roxin</li>
+                                                    <li>b. Teoría de la competencia de Jakobs</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TEORÍA ONTOLÓGICA SUBJETIVA -->
+                                    <div style="margin: 25px 0; padding: 20px; background: #F3E5F5; border-radius: 10px; border-left: 5px solid #9C27B0;">
+                                        <p style="font-size: 1.15em; font-weight: bold; color: #6A1B9A; margin-bottom: 12px;">📖 a) TEORÍA ONTOLÓGICA SUBJETIVA (Welzel)</p>
+                                        
+                                        <div class="definicion">
+                                            <div class="definicion-titulo">Definición de Autor según el Finalismo</div>
+                                            <p>Es quien <strong>conduce dolosa y conscientemente el acontecer causal en dirección al resultado típico</strong></p>
+                                            <p style="margin-top: 10px;">Pone el acento en la finalidad del sujeto, reflejo de la teoría de la acción final</p>
+                                        </div>
+
+                                        <div class="requisitos">
+                                            <div class="requisitos-titulo">Requisitos para ser autor en delitos dolosos:</div>
+                                            <p><strong>Autor es quien domina finalmente la ejecución del hecho</strong></p>
+                                            <ul class="lista-desordenada" style="margin-top: 10px;">
+                                                <li><strong>Elemento objetivo:</strong> Configuración del hecho</li>
+                                                <li><strong>Elemento subjetivo:</strong> Voluntad de realización</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="definicion">
+                                            <div class="definicion-titulo">Participación según Welzel</div>
+                                            <p><strong>Partícipe es:</strong></p>
+                                            <ul class="lista-desordenada" style="margin-top: 10px;">
+                                                <li>Quien auxilia el acto dominado finalmente por el autor, o</li>
+                                                <li>Quien incita a la decisión</li>
+                                            </ul>
+                                            <p style="margin-top: 10px; background: #FFE0B2; padding: 10px; border-radius: 6px;">⚠️ Es <strong>inconcebible en un hecho no doloso</strong>, porque implica conducción final</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- TEORÍA ONTOLÓGICA OBJETIVA -->
+                                    <div style="margin: 25px 0; padding: 20px; background: #E0F2F1; border-radius: 10px; border-left: 5px solid #00897B;">
+                                        <p style="font-size: 1.15em; font-weight: bold; color: #00695C; margin-bottom: 12px;">📖 b) TEORÍA ONTOLÓGICA OBJETIVA (Maurach)</p>
+                                        
+                                        <div class="definicion">
+                                            <div class="definicion-titulo">Definición de Autor</div>
+                                            
+                                            <p style="margin-bottom: 10px;"><strong>Elemento Objetivo:</strong></p>
+                                            <ul class="lista-desordenada">
+                                                <li>Es quien tiene en sus manos, <strong>consciente y materialmente</strong>, el curso del acontecer típico</li>
+                                                <li>Es quien tiene la <strong>posibilidad fáctica de dirigir la configuración típica del hecho</strong></li>
+                                                <li>Puede impedirlo o hacerlo continuar</li>
+                                            </ul>
+
+                                            <p style="margin: 15px 0; padding: 12px; background: white; border-radius: 6px;">
+                                                <strong>Acento:</strong> En la cuestión objetiva material. Si el sujeto tiene materialmente el control del hecho. Pero subsiste un componente subjetivo (dolo)
+                                            </p>
+
+                                            <p style="margin-top: 15px;"><strong>Elemento Subjetivo:</strong></p>
+                                            <ul class="lista-desordenada">
+                                                <li>Conocimiento del control del curso del acontecer típico</li>
+                                                <li>Voluntad de dominio fáctico del hecho</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="definicion">
+                                            <div class="definicion-titulo">Partícipe según Maurach</div>
+                                            <p>Ausencia de dominio del hecho por el colaborador o inductor</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- TEORÍA NORMATIVA DE ROXIN -->
+                                    <div style="margin: 25px 0; padding: 25px; background: #FFF3E0; border-radius: 10px; border: 4px solid #FF6F00;">
+                                        <p style="font-size: 1.2em; font-weight: bold; color: #E65100; margin-bottom: 15px;">⭐ a) TEORÍA NORMATIVA DE ROXIN (1963)</p>
+                                        <p style="background: white; padding: 12px; border-radius: 6px; margin-bottom: 15px; font-style: italic;">Obra fundamental: "Autoría y dominio del hecho"</p>
+                                        
+                                        <div class="definicion">
+                                            <div class="definicion-titulo">Concepto Central</div>
+                                            <p style="font-size: 1.1em;"><strong>Autor es la figura central del suceso</strong> (Roxin, p. 44)</p>
+                                        </div>
+
+                                        <div style="margin: 20px 0; padding: 20px; background: #E8F5E9; border-radius: 10px; border-left: 5px solid #4CAF50;">
+                                            <p style="font-weight: bold; color: #2E7D32; margin-bottom: 12px;">🔍 Criterio Metodológico</p>
+                                            <p>Es una <strong>síntesis entre:</strong></p>
+                                            <ul class="lista-desordenada" style="margin-top: 10px;">
+                                                <li><strong>Lo ontológico</strong> (autoría inmediata), y</li>
+                                                <li><strong>Lo teleológico</strong> (autoría mediata)</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="nota-importante">
+                                            <div class="nota-titulo">🎯 Figura Central del Suceso en Delitos de Dominio</div>
+                                            <p>Es el sujeto que tiene <strong>materialmente el dominio del hecho</strong>, conforme a criterios valorativos y político-criminales que deben determinarse en cada tipo de la PE</p>
+                                        </div>
+
+                                        <div style="margin: 20px 0; padding: 20px; background: #FCE4EC; border-radius: 10px;">
+                                            <p style="font-weight: bold; margin-bottom: 12px;">📌 Naturaleza del concepto:</p>
+                                            <p>El problema de la autoría y la participación es una <strong>cuestión de determinación del tipo</strong>:</p>
+                                            <ul class="lista-desordenada" style="margin-top: 10px;">
+                                                <li>A quién se aplica el tipo penal de autor</li>
+                                                <li>A quién los tipos de participación</li>
+                                            </ul>
+                                            <p style="margin-top: 10px; padding: 10px; background: white; border-radius: 6px;">Se trata de un <strong>concepto formal desprovisto de contenido</strong>. El contenido debe determinarse en cada tipo específico.</p>
+                                        </div>
+
+                                        <div class="subseccion">
+                                            <div class="subseccion-titulo">📊 Clasificación de Delitos según Roxin</div>
+                                            <p style="margin-bottom: 15px;">Para determinar la figura central del suceso es necesario distinguir:</p>
+
+                                            <!-- DELITOS DE DOMINIO -->
+                                            <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 10px; border: 3px solid #2196F3;">
+                                                <p style="font-size: 1.2em; font-weight: bold; color: #1565C0; margin-bottom: 15px;">1️⃣ DELITOS DE DOMINIO</p>
+                                                
+                                                <div class="definicion">
+                                                    <div class="definicion-titulo">Definición</div>
+                                                    <p>Son los que describen un <strong>comportamiento típico que lesiona o pone en peligro un bien jurídico</strong>, sin aludir a un quebrantamiento de un deber jurídico extrapenal</p>
+                                                    <p style="margin-top: 10px; font-style: italic;">Son la regla general (homicidio, lesiones, hurto, robo, etc.)</p>
+                                                </div>
+
+                                                <div style="margin: 15px 0; padding: 15px; background: #E3F2FD; border-radius: 8px;">
+                                                    <p><strong>Fundamento de la pena:</strong></p>
+                                                    <p style="margin-top: 8px;">Reside en el <strong>deber general de respetar las normas jurídico-penales</strong>, para no afectar bienes penalmente tutelados</p>
+                                                </div>
+
+                                                <div class="definicion">
+                                                    <div class="definicion-titulo">Dominio del Hecho en Delitos de Dominio</div>
+                                                    <p style="margin-bottom: 12px;">Pone en un plano equivalente lo objetivo y lo subjetivo</p>
+                                                    
+                                                    <div class="comparacion" style="margin-top: 15px;">
+                                                        <div style="background: #E8F5E9; padding: 15px; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                                                            <p style="font-weight: bold; color: #2E7D32;">Elemento Objetivo</p>
+                                                            <p style="margin-top: 8px;">Es quien tiene el <strong>señorío del hecho</strong></p>
+                                                        </div>
+                                                        <div style="background: #FFF3E0; padding: 15px; border-radius: 8px; border-left: 4px solid #FF9800;">
+                                                            <p style="font-weight: bold; color: #E65100;">Elemento Subjetivo</p>
+                                                            <p style="margin-top: 8px;">Es quien controla <strong>dolosamente el desarrollo del hecho</strong></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div style="margin: 20px 0; padding: 20px; background: #E1F5FE; border-radius: 10px; border-left: 5px solid #0288D1;">
+                                                    <p style="font-weight: bold; color: #01579B; margin-bottom: 15px;">🔑 Tres Clases de Dominio del Hecho:</p>
+                                                    
+                                                    <table class="tabla">
+                                                        <tr>
+                                                            <th style="width: 35%;">Tipo de Dominio</th>
+                                                            <th>Concepto</th>
+                                                            <th style="width: 25%;">Tipo de Autoría</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>i) Dominio de la conducta típica</strong></td>
+                                                            <td>El sujeto realiza personalmente la conducta típica</td>
+                                                            <td><strong>Autor Directo/Inmediato</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>ii) Dominio de la voluntad de quien ejecuta</strong></td>
+                                                            <td>El sujeto domina la voluntad de otro que ejecuta materialmente el hecho</td>
+                                                            <td><strong>Autor Mediato</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>iii) Dominio funcional del hecho</strong></td>
+                                                            <td>Varios sujetos tienen el codominio del hecho por división funcional de tareas</td>
+                                                            <td><strong>Coautor</strong></td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <p style="margin-top: 15px; padding: 12px; background: white; border-radius: 6px; font-weight: bold; text-align: center;">
+                                                        En los 3 casos hay dominio del hecho y por tanto, el sujeto es la figura central del suceso
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <!-- DELITOS DE INFRACCIÓN DE DEBER -->
+                                            <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 10px; border: 3px solid #FF5722;">
+                                                <p style="font-size: 1.2em; font-weight: bold; color: #D84315; margin-bottom: 15px;">2️⃣ DELITOS DE INFRACCIÓN DE UN DEBER</p>
+                                                
+                                                <div class="definicion">
+                                                    <div class="definicion-titulo">Definición</div>
+                                                    <p>Son aquellos en que se <strong>lesiona o pone en peligro un bien jurídico mediante el quebrantamiento de un deber extrapenal</strong></p>
+                                                    <ul class="lista-desordenada" style="margin-top: 10px;">
+                                                        <li>Requieren una <strong>calidad especial</strong> en quien realiza la conducta típica (Ej.: delitos especiales)</li>
+                                                        <li><strong>Sólo puede ser autor</strong> el que lesiona un deber especial extrapenal</li>
+                                                        <li>El <strong>extraneus NO podría ser sancionado como autor</strong>, por no reunir las condiciones requeridas por el tipo (principio de legalidad)</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div style="margin: 15px 0; padding: 15px; background: #FFEBEE; border-radius: 8px;">
+                                                    <p><strong>Fundamento de la sanción:</strong></p>
+                                                    <p style="margin-top: 8px;">Reside en el <strong>incumplimiento de la salvaguarda ligada a un rol social especial</strong></p>
+                                                </div>
+
+                                                <div class="nota-importante">
+                                                    <div class="nota-titulo">🎯 Criterio de Autoría</div>
+                                                    <p>La <strong>figura central del suceso es quien tiene el deber</strong></p>
+                                                    <p style="margin-top: 10px;">Aun cuando se domine una conducta típica, si no se tiene la calidad especial requerida en el tipo, el sujeto NO es autor</p>
+                                                </div>
+
+                                                <div style="margin: 20px 0;">
+                                                    <p style="font-weight: bold; margin-bottom: 10px;">📌 Casos incluidos:</p>
+                                                    
+                                                    <div style="background: #FFF9E6; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                                        <p style="font-weight: bold; color: #F57F17;">• En delitos especiales o de infracción de deber:</p>
+                                                        <p style="margin-top: 8px;">El tipo exige que concurra una calidad especial en el sujeto activo, por tanto <strong>NO basta con que concurra el dominio del hecho</strong></p>
+                                                    </div>
+
+                                                    <div style="background: #E8F5E9; padding: 15px; border-radius: 8px;">
+                                                        <p style="font-weight: bold; color: #2E7D32;">• En delitos de omisión impropia:</p>
+                                                        <p style="margin-top: 8px;">El tipo exige que el sujeto activo se encuentre en <strong>posición de garante</strong>, por lo que tampoco basta con que concurra el dominio del hecho</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- DELITOS DE PROPIA MANO -->
+                                            <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 10px; border: 3px solid #9C27B0;">
+                                                <p style="font-size: 1.2em; font-weight: bold; color: #6A1B9A; margin-bottom: 15px;">3️⃣ DELITOS DE PROPIA MANO</p>
+                                                
+                                                <div class="definicion">
+                                                    <div class="definicion-titulo">Concepto</div>
+                                                    <p>Sólo pueden realizarse mediante una <strong>intervención corporal del autor en la ejecución del hecho típico</strong></p>
+                                                    <p style="margin-top: 10px;">Sólo la <strong>realización personal de la conducta típica</strong> fundamenta la autoría</p>
+                                                </div>
+
+                                                <div class="nota-importante">
+                                                    <div class="nota-titulo">⚠️ Importancia</div>
+                                                    <p><strong>NO admiten autoría mediata ni coautoría</strong></p>
+                                                </div>
+
+                                                <div style="margin: 20px 0;">
+                                                    <p style="font-weight: bold; margin-bottom: 12px;">Roxin atribuye a esta categoría 2 grupos:</p>
+                                                    
+                                                    <div style="margin: 15px 0; padding: 15px; background: #F3E5F5; border-radius: 8px;">
+                                                        <p style="font-weight: bold; color: #6A1B9A;">a) Los delitos de estado</p>
+                                                        <ul class="lista-desordenada" style="margin-top: 10px;">
+                                                            <li>Sancionan una actitud personal, una condición, un tipo de personalidad asocial o un modo de vida</li>
+                                                            <li>Pueden no depender de la voluntad del sujeto</li>
+                                                            <li>Son manifestaciones de Derecho Penal de autor</li>
+                                                            <li>No resulta necesaria una concreta lesión de un bien jurídico</li>
+                                                            <li>Ni una conducta típica descrita con exactitud</li>
+                                                        </ul>
+                                                        <div class="ejemplo">
+                                                            <div class="ejemplo-titulo">Ejemplo:</div>
+                                                            <div class="ejemplo-contenido">
+                                                                Los derogados tipos penales de <strong>vagancia y mendicidad</strong>. Se puede inducir a otros a tales estilos de vida, pero no se da el dominio del hecho. Tampoco hay división del trabajo funcional. A lo sumo podrían vagabundear 2 personas amigas, pero son autores simples y NO coautores.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div style="margin: 15px 0; padding: 15px; background: #E1F5FE; border-radius: 8px;">
+                                                        <p style="font-weight: bold; color: #01579B;">b) Delitos vinculados a comportamientos, sin lesión de bien jurídico</p>
+                                                        <ul class="lista-desordenada" style="margin-top: 10px;">
+                                                            <li>Son hechos punibles sin víctima</li>
+                                                            <li>Sancionan conductas que contradicen las convicciones morales de un grupo social</li>
+                                                            <li>NO lesionan o ponen en peligro un bien jurídico</li>
+                                                            <li>Se reprueba la supuesta inmoralidad de la conducta</li>
+                                                            <li>Sólo pueden ser cometidos directa, dolosa y libremente</li>
+                                                        </ul>
+                                                        <div class="ejemplo">
+                                                            <div class="ejemplo-titulo">Ejemplo que subsiste:</div>
+                                                            <div class="ejemplo-contenido">
+                                                                El tipo penal de <strong>sodomía consentida</strong> del art. 365 CP (Rodríguez Collao, Delitos sexuales, 2014, p. 339 y ss.)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TEORÍA DE LA COMPETENCIA DE JAKOBS -->
+                                    <div style="margin: 25px 0; padding: 25px; background: #ECEFF1; border-radius: 10px; border: 4px solid #455A64;">
+                                        <p style="font-size: 1.2em; font-weight: bold; color: #263238; margin-bottom: 15px;">⚖️ b) TEORÍA DE LA COMPETENCIA (Jakobs)</p>
+                                        <p style="background: white; padding: 12px; border-radius: 6px; margin-bottom: 15px;"><strong>Normativismo extremo de Jakobs</strong></p>
+                                        
+                                        <div style="margin: 15px 0; padding: 15px; background: #FFF3E0; border-radius: 8px;">
+                                            <p style="font-weight: bold; margin-bottom: 10px;">🎯 Criterio fundamental:</p>
+                                            <p>En base a la <strong>clase de deber que recae sobre el sujeto</strong>, distingue entre:</p>
+                                            <ul class="lista-desordenada" style="margin-top: 10px;">
+                                                <li>Delitos de organización</li>
+                                                <li>Delitos de infracción de deber</li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- DELITOS DE ORGANIZACIÓN SEGÚN JAKOBS -->
+                                        <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 10px; border: 3px solid #00897B;">
+                                            <p style="font-size: 1.15em; font-weight: bold; color: #00695C; margin-bottom: 15px;">1️⃣ DELITOS DE ORGANIZACIÓN</p>
+                                            
+                                            <div class="definicion">
+                                                <div class="definicion-titulo">Definición</div>
+                                                <p>Son aquellos en los que el sujeto infringe el <strong>deber más general</strong>, consistente en la obligación de <strong>no lesionar a los demás en sus bienes</strong> o <em>neminem laede</em></p>
+                                            </div>
+
+                                            <div style="margin: 15px 0; padding: 15px; background: #E0F2F1; border-radius: 8px;">
+                                                <p><strong>Fundamento de la imputación:</strong></p>
+                                                <p style="margin-top: 8px;"><span class="destacado">Organización defectuosa</span> - La libertad en la organización implica responsabilidad por las consecuencias de la mala organización</p>
+                                            </div>
+
+                                            <div style="margin: 15px 0; padding: 15px; background: #FFF9E6; border-radius: 8px;">
+                                                <p><strong>La atribución de responsabilidad penal se funda en:</strong></p>
+                                                <p style="margin-top: 8px;">El <strong>uso arbitrario de la libertad</strong>, dañando los bienes de los demás</p>
+                                                <p style="margin-top: 8px;">El sujeto responde en razón del <strong>quantum de lo organizado</strong></p>
+                                            </div>
+
+                                            <div class="nota-importante">
+                                                <div class="nota-titulo">🔑 Concepto de Autor en Delitos de Organización</div>
+                                                <p>Es aquel que domina <strong>al menos uno</strong> de los siguientes tres ámbitos:</p>
+                                            </div>
+
+                                            <div style="margin: 20px 0; padding: 20px; background: #E8F5E9; border-radius: 10px; border-left: 5px solid #4CAF50;">
+                                                <p style="font-weight: bold; color: #2E7D32; margin-bottom: 15px; font-size: 1.1em;">📊 TRES ÁMBITOS DE AUTORÍA:</p>
+                                                
+                                                <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px; border-left: 3px solid #66BB6A;">
+                                                    <p style="font-weight: bold; color: #388E3C;">i) Dominio del hecho formal:</p>
+                                                    <p style="margin-top: 8px;">Vinculado al tipo y referido a la <strong>realización de la conducta típica</strong></p>
+                                                </div>
+
+                                                <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px; border-left: 3px solid #66BB6A;">
+                                                    <p style="font-weight: bold; color: #388E3C;">ii) Dominio del hecho material:</p>
+                                                    <p style="margin-top: 8px;">Como <strong>dominio de decisión</strong>, es decir, la persona decide si el hecho se realiza o no</p>
+                                                </div>
+
+                                                <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px; border-left: 3px solid #66BB6A;">
+                                                    <p style="font-weight: bold; color: #388E3C;">iii) Dominio de configuración:</p>
+                                                    <p style="margin-top: 8px;">La persona decide <strong>cómo se realiza el hecho</strong> o qué configuración concreta tendrá</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="caso-practico">
+                                                <div class="caso-titulo">💡 EJEMPLO PRÁCTICO: La Bomba</div>
+                                                <div class="caso-planteamiento">
+                                                    Tres personas intervienen en un atentado con bomba:
+                                                </div>
+                                                <div class="caso-solucion">
+                                                    <p style="font-weight: bold; margin-bottom: 10px;">Los tres son AUTORES según Jakobs:</p>
+                                                    <ul class="lista-desordenada">
+                                                        <li><strong>Sujeto 1:</strong> Prepara una bomba para hacerla explotar → <span class="destacado">Dominio por configuración</span></li>
+                                                        <li><strong>Sujeto 2:</strong> Va al lugar y pone la bomba → <span class="destacado">Dominio formal</span></li>
+                                                        <li><strong>Sujeto 3:</strong> Activa la bomba → <span class="destacado">Dominio material</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="nota-importante">
+                                                <div class="nota-titulo">⚡ Características Distintivas de Jakobs</div>
+                                                <ul class="lista-desordenada">
+                                                    <li>Las 3 formas de dominio están en el ejemplo, divididas en distintos sujetos</li>
+                                                    <li>Jakobs <strong>NO requiere</strong> que necesariamente se realicen actos ejecutivos de la descripción del tipo</li>
+                                                    <li>O que se actúe en forma simultánea</li>
+                                                    <li>Admite como coautoría la <strong>ejecución de hechos previos</strong></li>
+                                                </ul>
+                                            </div>
+
+                                            <div style="margin: 20px 0; padding: 20px; background: #E1F5FE; border-radius: 10px;">
+                                                <p style="font-weight: bold; color: #01579B; margin-bottom: 12px;">🎯 Lo relevante según Jakobs:</p>
+                                                <ul class="lista-desordenada">
+                                                    <li>La posibilidad de <strong>atribuir responsabilidad al ámbito de competencia del autor</strong></li>
+                                                    <li>Si concurre alguna forma de dominio, el acto es competencia del sujeto y su responsabilidad</li>
+                                                    <li>Todo depende del <strong>deber</strong>, del <strong>ámbito de competencia</strong> y del <strong>rol</strong> que tiene cada persona en la sociedad</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- DELITOS DE INFRACCIÓN DE DEBER SEGÚN JAKOBS -->
+                                        <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 10px; border: 3px solid #E91E63;">
+                                            <p style="font-size: 1.15em; font-weight: bold; color: #C2185B; margin-bottom: 15px;">2️⃣ DELITOS DE INFRACCIÓN DE DEBER</p>
+                                            
+                                            <div class="definicion">
+                                                <div class="definicion-titulo">Definición</div>
+                                                <p>Son aquellos en los que el sujeto infringe el <strong>deber especial que le impone el ordenamiento jurídico en virtud de su rol social</strong></p>
+                                            </div>
+
+                                            <div style="margin: 15px 0; padding: 20px; background: #FCE4EC; border-radius: 10px; border-left: 5px solid #E91E63;">
+                                                <p style="font-weight: bold; color: #C2185B; margin-bottom: 12px; font-size: 1.1em;">Fundamento de la imputación:</p>
+                                                
+                                                <div style="margin: 10px 0;">
+                                                    <p style="font-weight: bold;">Consiste en:</p>
+                                                    <ul class="lista-desordenada" style="margin-top: 8px;">
+                                                        <li>La <strong>lesión del deber de comportamiento solidario</strong> que se exige en favor de un interés</li>
+                                                        <li>Garantizar solidariamente la existencia del interés</li>
+                                                        <li><strong>Defraudación de expectativas</strong> - Se realiza con el incumplimiento de un deber que surge de un rol determinado</li>
+                                                    </ul>
+                                                </div>
+
+                                                <p style="margin-top: 15px; padding: 12px; background: white; border-radius: 6px; font-weight: bold; text-align: center;">
+                                                    El Autor se determina por la lesión del deber
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TABLA RESUMEN DE CONCEPTOS -->
+                    <div style="margin: 30px 0; padding: 25px; background: #F5F5F5; border-radius: 10px;">
+                        <p style="font-size: 1.3em; font-weight: bold; color: #8B0000; margin-bottom: 20px; text-align: center;">📊 TABLA RESUMEN: CONCEPTOS DE AUTOR</p>
+                        
+                        <table class="tabla">
+                            <tr>
+                                <th style="width: 25%;">Teoría</th>
+                                <th>Concepto de Autor</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Concepto Unitario</strong></td>
+                                <td>Es el que aporta una condición para la causación del resultado típico</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Concepto Extensivo</strong></td>
+                                <td>Es el que de cualquier manera realiza el tipo y la lesión del bien jurídico protegido</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Objetivo Formal</strong></td>
+                                <td>Es quien realiza, todos o algunos de los actos ejecutivos previstos en el tipo legal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Objetivo Material</strong></td>
+                                <td>Es el que realiza una aportación objetivamente imprescindible, sin la cual el hecho no se habría podido ejecutar</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ontológico Subjetivo</strong></td>
+                                <td>Es quien conduce dolosa y conscientemente el acontecer causal en dirección al resultado típico</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ontológico Objetivo</strong></td>
+                                <td>Es quien tiene en sus manos, dolosa y materialmente, el curso del acontecer típico</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Normativa de Roxin</strong></td>
+                                <td>Es la figura central del suceso</td>
+                            </tr>
+                            <tr>
+                                <td><strong>De la Competencia</strong></td>
+                                <td>Es el que infringe un deber general de no dañar a otro o un deber especial impuesto por el ordenamiento jurídico en virtud de su rol social</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: AUTORÍA Y PARTICIPACIÓN EN EL CÓDIGO PENAL CHILENO -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🇨🇱</span>
+                    AUTORÍA Y PARTICIPACIÓN EN EL CÓDIGO PENAL CHILENO
+                </div>
+                <div class="contenido">
+                    
+                    <div style="background: #FFF3E0; padding: 20px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid #FF9800;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #E65100; margin-bottom: 10px;">📖 Ubicación Legal</p>
+                        <p><strong>Título II, del Libro Primero del Código Penal:</strong></p>
+                        <p style="margin-top: 8px; font-style: italic;">"De las personas responsables de los delitos"</p>
+                        <p style="margin-top: 15px; font-weight: bold;">Artículo 14</p>
+                    </div>
+
+                    <div class="articulo">
+                        <div class="articulo-numero">Art. 14 - Clasificación General</div>
+                        <div class="articulo-texto">
+                            La ley distingue <strong>3 formas de concurrencia</strong> en un hecho punible:
+                            <ul class="lista-ordenada" style="margin-top: 10px;">
+                                <li><strong>AUTOR</strong> (La inducción es una forma de participación castigada como autoría en el art. 15 N° 2)</li>
+                                <li><strong>CÓMPLICE</strong></li>
+                                <li><strong>ENCUBRIDOR</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin: 25px 0;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #8B0000; margin-bottom: 15px;">📋 ESQUEMA COMPLETO DEL SISTEMA CHILENO</p>
+                        
+                        <table class="tabla">
+                            <tr>
+                                <th style="width: 20%;">Categoría</th>
+                                <th style="width: 25%;">Tipo</th>
+                                <th style="width: 25%;">Artículo</th>
+                                <th>Observaciones</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="background: #E3F2FD; font-weight: bold;">AUTOR</td>
+                                <td>1) Inmediato</td>
+                                <td>Se desprende de la PE, de cada tipo específico<br><em>(Jurisprudencia: art. 15 N° 1)</em></td>
+                                <td>Cury sostiene que también puede estar en 15 Nº 1 y 15 Nº 2</td>
+                            </tr>
+                            <tr>
+                                <td>2) Mediato</td>
+                                <td>Art. 15 N° 2 del CP</td>
+                                <td>Cury: También 15 Nº 1</td>
+                            </tr>
+                            <tr>
+                                <td>3) Coautor</td>
+                                <td>Art. 15 N° 1 del CP<br>(y 15 N° 3 CP)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="background: #FFF3E0; font-weight: bold;">PARTÍCIPE</td>
+                                <td>1) Inductor</td>
+                                <td>Art. 15 N° 2 del CP</td>
+                                <td>Es un partícipe <strong>castigado como autor</strong> en la mayoría de las legislaciones</td>
+                            </tr>
+                            <tr>
+                                <td>2) Cómplice</td>
+                                <td>Art. 15 N° 3 del CP<br>(Complicidad con concierto previo)<br><br>Art. 16 del CP<br>(Complicidad sin concierto previo)</td>
+                                <td>Parte de la doctrina considera el 15 N° 3 como Coautoría: Yáñez, Soto</td>
+                            </tr>
+                            <tr>
+                                <td>3) Encubridor</td>
+                                <td>Art. 17 del CP</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- ARTÍCULO 15 COMPLETO -->
+                    <div style="margin: 30px 0;">
+                        <div class="articulo">
+                            <div class="articulo-numero">Art. 15 - Se consideran autores:</div>
+                            <div class="articulo-texto">
+                                <p style="margin-bottom: 15px;"><strong>Esta norma contempla, en total, 6 hipótesis:</strong></p>
+                                
+                                <div style="background: #E8F5E9; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #4CAF50;">
+                                    <p style="font-weight: bold; color: #2E7D32; margin-bottom: 10px;">1° Los que toman parte en la ejecución del hecho:</p>
+                                    <ul class="lista-desordenada">
+                                        <li>a. Sea de una manera inmediata y directa,</li>
+                                        <li>b. Sea impidiendo o procurando impedir que se evite</li>
+                                    </ul>
+                                </div>
+
+                                <div style="background: #FFF3E0; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #FF9800;">
+                                    <p style="font-weight: bold; color: #E65100; margin-bottom: 10px;">2° Los que:</p>
+                                    <ul class="lista-desordenada">
+                                        <li>a. Fuerzan, o</li>
+                                        <li>b. Inducen directamente a otro a ejecutarlo</li>
+                                    </ul>
+                                </div>
+
+                                <div style="background: #E3F2FD; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #2196F3;">
+                                    <p style="font-weight: bold; color: #1565C0; margin-bottom: 10px;">3° Los que, concertados para su ejecución:</p>
+                                    <ul class="lista-desordenada">
+                                        <li>a. Facilitan los medios con que se lleva a efecto el hecho, o</li>
+                                        <li>b. Lo presencian sin tomar parte inmediata en él</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nota-importante">
+                        <div class="nota-titulo">⚖️ CONTROVERSIA DOCTRINARIA</div>
+                        <p style="margin-bottom: 12px;">Existe acuerdo en que la <strong>inducción</strong>, incluida en el art 15 Nº 2, 2ª parte es una forma de <strong>participación sancionada como autoría</strong></p>
+                        <p style="margin-bottom: 12px;"><strong>Importancia:</strong> Siendo una forma de participación, rigen los principios de convergencia, accesoriedad, exterioridad y comunicabilidad</p>
+                        <p style="background: #FFE0B2; padding: 12px; border-radius: 6px; margin-top: 12px;">
+                            ⚠️ Doctrina y jurisprudencia <strong>se distancian</strong> en la interpretación de los supuestos contemplados en el art. 15 Nº 1 2ª parte y en los supuestos contemplados en el art 15 Nº 3
+                        </p>
+                    </div>
+
+                    <div style="margin: 25px 0;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #8B0000; margin-bottom: 15px;">🔍 DOS POSICIONES INTERPRETATIVAS</p>
+                        
+                        <div class="comparacion">
+                            <div style="background: #FFEBEE; padding: 20px; border-radius: 10px; border: 3px solid #D32F2F;">
+                                <p style="font-weight: bold; color: #B71C1C; font-size: 1.15em; margin-bottom: 12px;">a) INTERPRETACIÓN AMPLIA</p>
+                                <p style="margin-bottom: 10px;">El art. 15 incluye supuestos de complicidad</p>
+                                <p style="padding: 12px; background: white; border-radius: 6px;">
+                                    Ello es una <strong>decisión consciente del legislador</strong>, que se expresa en la frase <span class="destacado">"se consideran autores"</span>
+                                </p>
+                            </div>
+
+                            <div style="background: #E8F5E9; padding: 20px; border-radius: 10px; border: 3px solid #388E3C;">
+                                <p style="font-weight: bold; color: #1B5E20; font-size: 1.15em; margin-bottom: 12px;">b) INTERPRETACIÓN RESTRICTIVA</p>
+                                <p style="margin-bottom: 10px;"><em>Posición minoritaria (Sergio Yáñez)</em></p>
+                                <ul class="lista-desordenada">
+                                    <li>Las hipótesis del art. 15 Nº 1 y nº 3, son formas de <strong>COAUTORÍA</strong></li>
+                                    <li>Hay que comprobar que efectivamente se cumplen los requisitos para hablar de verdaderos coautores</li>
+                                    <li>El encabezado de la norma se explica porque incluye al inductor, único caso de participación sancionado como autor</li>
+                                    <li>Las 4 hipótesis de autoría contempladas en los Nº 1 y 3, se encuentran precedidas de exigencias generales:
+                                        <ul style="margin-top: 8px; margin-left: 20px;">
+                                            <li>Tomar parte en la ejecución del hecho (Nº 1), o</li>
+                                            <li>Estar concertado para la ejecución del delito (Nº 3)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 4: ALCANCE DEL ART. 15 N°1 -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">📜</span>
+                    ALCANCE DEL ART. 15 N° 1
+                </div>
+                <div class="contenido">
+                    
+                    <div class="subseccion">
+                        <div class="subseccion-titulo">1️⃣ Autor Individual</div>
+                        
+                        <div style="background: #E3F2FD; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                            <p style="margin-bottom: 12px;"><strong>Ubicación:</strong></p>
+                            <p style="margin-bottom: 15px;">Se encuentra contemplado directamente en los tipos de la Parte Especial con la expresión <span class="destacado">"El que"</span></p>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">⚖️ Posición de parte de la doctrina (Garrido) y la jurisprudencia:</p>
+                                <p>Consideran que el autor individual está incluido en el art. 15 Nº 1 en la expresión:</p>
+                                <p style="margin-top: 10px; padding: 12px; background: #FFF9E6; border-radius: 6px; font-style: italic;">
+                                    <strong>"Se consideran autores: Los que toman parte en la ejecución del hecho sea de una inmediata y directa…"</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subseccion">
+                        <div class="subseccion-titulo">2️⃣ Coautoría</div>
+                        
+                        <div class="definicion">
+                            <div class="definicion-titulo">Concepto</div>
+                            <p>La disposición alude a la coautoría, es decir, a supuestos en que <strong>intervienen varios sujetos</strong> que entre todos tienen el <strong>codominio funcional del hecho</strong> y que obran sobre la base de un <strong>acuerdo de voluntades</strong></p>
+                        </div>
+
+                        <div class="requisitos">
+                            <div class="requisitos-titulo">📌 Requisito General</div>
+                            <p>Los dos supuestos contemplados en el art. 15 Nº 1 requieren que el coautor <strong>tome parte en la ejecución del hecho</strong>:</p>
+                            <ul class="lista-desordenada" style="margin-top: 10px;">
+                                <li>Sea de una manera inmediata y directa</li>
+                                <li>Sea impidiendo o procurando impedir que se evite</li>
+                            </ul>
+                            <p style="margin-top: 12px; padding: 12px; background: #FFF3E0; border-radius: 6px;">
+                                <strong>Ambos casos exigen la realización de actos ejecutivos</strong> de cualquier índole que tiendan a la realización del delito
+                            </p>
+                        </div>
+
+                        <div style="margin: 25px 0;">
+                            <p style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">🔍 DOS INTERPRETACIONES DEL ALCANCE:</p>
+                            
+                            <!-- INTERPRETACIÓN RESTRICTIVA -->
+                            <div style="margin: 20px 0; padding: 20px; background: #E8F5E9; border-radius: 10px; border: 3px solid #4CAF50;">
+                                <p style="font-size: 1.15em; font-weight: bold; color: #2E7D32; margin-bottom: 15px;">🔒 INTERPRETACIÓN RESTRICTIVA</p>
+                                
+                                <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                    <p style="font-weight: bold; margin-bottom: 10px;">Concepto de "ejecución":</p>
+                                    <p>La palabra <strong>ejecución</strong> se utiliza en un sentido técnico del art. 7 CP, es decir, referidos a la realización de <strong>actos incorporados al tipo de que se trate</strong></p>
+                                </div>
+
+                                <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                    <p style="font-weight: bold; margin-bottom: 10px;">Requisito:</p>
+                                    <p>Toman parte en la ejecución del delito impidiendo o procurando impedir que se evite, sólo quienes realizan <strong>actos ejecutivos incorporados al tipo</strong></p>
+                                </div>
+
+                                <div class="ejemplo">
+                                    <div class="ejemplo-titulo">💡 Ejemplo de acto ejecutivo:</div>
+                                    <div class="ejemplo-contenido">
+                                        En un delito de <strong>violación</strong>, un sujeto afirma a la víctima mientras el otro la accede carnalmente (fuerza: art. 361 CP)
+                                        <p style="margin-top: 10px; font-weight: bold;">Ambos son COAUTORES porque realizan actos ejecutivos</p>
+                                        <p style="margin-top: 8px; font-size: 0.95em; font-style: italic;">(Rodríguez Collao, Delitos sexuales, 2014, pp. 214-215)</p>
+                                    </div>
+                                </div>
+
+                                <div class="critica">
+                                    <div class="critica-titulo">❌ Consecuencia para el "loro":</div>
+                                    <p>El caso del <strong>"loro"</strong> que se limita a vigilar la llegada de los dueños de casa o de la policía estaría <strong>fuera del alcance de este numeral</strong> para la interpretación restrictiva y, por lo tanto, sería una conducta constitutiva de complicidad: ¿15 número 3 o art. 16?</p>
+                                </div>
+                            </div>
+
+                            <!-- INTERPRETACIÓN AMPLIA -->
+                            <div style="margin: 20px 0; padding: 20px; background: #FFF3E0; border-radius: 10px; border: 3px solid #FF9800;">
+                                <p style="font-size: 1.15em; font-weight: bold; color: #E65100; margin-bottom: 15px;">🔓 INTERPRETACIÓN AMPLIA</p>
+                                
+                                <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                    <p style="font-weight: bold; margin-bottom: 10px;">Criterio:</p>
+                                    <p>Hay que distinguir la <strong>importancia de la contribución</strong></p>
+                                    <ul class="lista-desordenada" style="margin-top: 10px;">
+                                        <li>El aporte debe ser <strong>esencial</strong> al hecho proyectado de común acuerdo</li>
+                                        <li>Debe <strong>repercutir durante la ejecución</strong></li>
+                                    </ul>
+                                </div>
+
+                                <div class="caso-practico">
+                                    <div class="caso-titulo">💡 EJEMPLO: El líder de la banda</div>
+                                    <div class="caso-planteamiento">
+                                        Si el líder de la banda:
+                                        <ul style="margin-top: 10px; margin-left: 20px;">
+                                            <li>Distribuye los roles que cumplirán los ejecutores del plan común</li>
+                                            <li>Entrega los planos del banco</li>
+                                            <li>Indica los horarios de cambio de guardia</li>
+                                            <li>El lugar exacto en que se distribuyen los guardias</li>
+                                            <li>Proporciona la ubicación y la clave de la bóveda</li>
+                                            <li>Además de un rápido vehículo en el cual llegarán y escaparán sus secuaces</li>
+                                        </ul>
+                                    </div>
+                                    <div class="caso-solucion">
+                                        <p style="font-weight: bold; margin-bottom: 10px;">SOLUCIÓN:</p>
+                                        <p>Es un <strong>COAUTOR</strong> aun cuando el organizador no esté durante la ejecución en comunicación telefónica con los autores</p>
+                                        <p style="margin-top: 10px; background: #FFFDE7; padding: 10px; border-radius: 6px;">
+                                            Su aporte es ESENCIAL y REPERCUTE en la ejecución, aunque no realice actos ejecutivos típicos
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subseccion">
+                        <div class="subseccion-titulo">3️⃣ Posición de Cury sobre el Art. 15 N° 1</div>
+                        
+                        <div style="background: #F3E5F5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                            <p style="font-weight: bold; color: #6A1B9A; margin-bottom: 15px; font-size: 1.1em;">📚 Cury incluye casos de autoría mediata en el N° 1</p>
+                            
+                            <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">En el Nº 1 primera parte:</p>
+                                <p>Incluye casos que la doctrina trata como hipótesis de <strong>autoría mediata</strong> cuando el hombre de atrás se sirve de un <strong>error de tipo del instrumento</strong></p>
+                            </div>
+
+                            <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">En el Nº 1 segunda parte:</p>
+                                <p style="margin-bottom: 10px;">Incluye casos de autoría mediata:</p>
+                                
+                                <div style="margin: 10px 0; padding: 12px; background: #FFF9E6; border-radius: 6px;">
+                                    <p style="font-weight: bold;">a. Error directo de prohibición del instrumento</p>
+                                    <div class="ejemplo">
+                                        <div class="ejemplo-titulo">Ejemplo:</div>
+                                        <div class="ejemplo-contenido">
+                                            Caso de la extranjera en cuyo país se fomenta el aborto y cree que en Chile pasa lo mismo y aborta
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="margin: 10px 0; padding: 12px; background: #E8F5E9; border-radius: 6px;">
+                                    <p style="font-weight: bold;">b. Error en el sentido del comportamiento del ejecutor</p>
+                                    <div class="ejemplo">
+                                        <div class="ejemplo-titulo">Ejemplo:</div>
+                                        <div class="ejemplo-contenido">
+                                            Caso error en la persona - El instrumento yerra sobre quién es la víctima
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="margin: 15px 0; padding: 15px; background: #E3F2FD; border-radius: 8px;">
+                                    <p style="font-weight: bold; color: #1565C0;">Argumento de Cury:</p>
+                                    <p style="margin-top: 8px;">El autor mediato ha <strong>impedido o procurado impedir que el hecho se evite</strong>, al privar al instrumento de motivos para inhibirse de obrar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 5: ALCANCE DEL ART. 15 N°2 -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">📜</span>
+                    ALCANCE DEL ART. 15 N° 2
+                </div>
+                <div class="contenido">
+                    
+                    <div class="articulo">
+                        <div class="articulo-numero">Art. 15 N° 2</div>
+                        <div class="articulo-texto">
+                            "Los que <strong>fuerzan</strong> o <strong>inducen</strong> directamente a otro a ejecutarlo"
+                        </div>
+                    </div>
+
+                    <!-- PRIMERA PARTE: FUERZAN -->
+                    <div style="margin: 25px 0; padding: 25px; background: #E3F2FD; border-radius: 10px; border: 4px solid #1976D2;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #0D47A1; margin-bottom: 15px;">1️⃣ PRIMERA PARTE: "Los que fuerzan directamente a otro a ejecutarlo"</p>
+                        
+                        <div class="definicion">
+                            <div class="definicion-titulo">Naturaleza Jurídica</div>
+                            <p>Se refiere a supuestos de <strong>AUTORÍA MEDIATA</strong></p>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 10px;">
+                            <p style="font-weight: bold; margin-bottom: 12px; color: #1565C0;">🔍 Concepto de "Fuerza"</p>
+                            <p style="margin-bottom: 10px;">La expresión <strong>fuerza</strong> es entendida en el sentido de <span class="destacado">fuerza moral</span></p>
+                            
+                            <div class="nota-importante" style="margin-top: 15px;">
+                                <div class="nota-titulo">⚠️ Distinción con fuerza física</div>
+                                <p>El empleo de <strong>fuerza física</strong> es un caso de <strong>autoría directa</strong> del tipo penal de la PE o del art. 15 Nº 1 (según Jurisprudencia y Garrido), cuando quien la padece es reducido a un mero objeto</p>
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 20px; background: #FFF9E6; border-radius: 10px; border-left: 5px solid #FFA726;">
+                            <p style="font-weight: bold; margin-bottom: 12px; color: #E65100;">📚 Posiciones Doctrinales</p>
+                            
+                            <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">• Mayoría de la doctrina nacional:</p>
+                                <p>En esta parte del art. 15 N° 2 caben <strong>TODAS las formas de autoría mediata</strong> (Etcheberry, T. II, pp. 97-98)</p>
+                            </div>
+
+                            <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">• Posición de Garrido:</p>
+                                <p>Al menos aquellos en que existe <strong>fuerza moral</strong> (Garrido, T.II. p. 405), como cuando se coacciona al instrumento para que ejecute la conducta típica</p>
+                            </div>
+                        </div>
+
+                        <div class="ejemplo">
+                            <div class="ejemplo-titulo">💡 Ejemplos de Autoría Mediata por Fuerza</div>
+                            <div class="ejemplo-contenido">
+                                <ul class="lista-desordenada">
+                                    <li>A amenaza de muerte a B si no mata a C → A es autor mediato</li>
+                                    <li>Coacción mediante violencia psicológica para ejecutar el delito</li>
+                                    <li>Amenaza con daños graves a familiares si no ejecuta el hecho</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEGUNDA PARTE: INDUCEN -->
+                    <div style="margin: 25px 0; padding: 25px; background: #FFF3E0; border-radius: 10px; border: 4px solid #F57C00;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #E65100; margin-bottom: 15px;">2️⃣ SEGUNDA PARTE: "Los que inducen directamente a otro"</p>
+                        
+                        <div class="definicion">
+                            <div class="definicion-titulo">Naturaleza Jurídica</div>
+                            <p>Se refiere al <strong>INSTIGADOR o INDUCTOR</strong></p>
+                            <p style="margin-top: 10px; background: #FFEBEE; padding: 12px; border-radius: 6px;">
+                                Es una <strong>forma de participación sancionada como autoría</strong>. Se impone al inductor la misma pena que al autor.
+                            </p>
+                        </div>
+
+                        <div class="nota-importante">
+                            <div class="nota-titulo">⚖️ Naturaleza de Participación</div>
+                            <p>El instigador <strong>sigue siendo un partícipe</strong>, por lo que para ser punible su actuación debe cumplir con las exigencias de los principios de:</p>
+                            <ul class="lista-desordenada" style="margin-top: 10px;">
+                                <li><strong>Convergencia:</strong> Debe haber convergencia entre la conducta del inductor y del autor</li>
+                                <li><strong>Accesoriedad:</strong> La inducción depende de que el autor realice al menos la tentativa</li>
+                                <li><strong>Exterioridad:</strong> Debe manifestarse externamente, no basta la mera cogitación</li>
+                                <li><strong>Comunicabilidad:</strong> Ciertas circunstancias pueden o no comunicarse entre partícipes</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin: 20px 0;">
+                            <p style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px; color: #D84315;">📋 ELEMENTOS DE LA INDUCCIÓN</p>
+                            
+                            <div class="requisitos">
+                                <div class="requisitos-titulo">1. Elemento Objetivo</div>
+                                <ul class="lista-desordenada">
+                                    <li>Debe ser <strong>directa:</strong> Influir directamente sobre la voluntad del inducido</li>
+                                    <li>Debe determinar al inducido a cometer un <strong>delito concreto y determinado</strong></li>
+                                    <li>El inducido debe efectivamente realizar al menos la tentativa del delito</li>
+                                </ul>
+                            </div>
+
+                            <div class="requisitos" style="margin-top: 15px;">
+                                <div class="requisitos-titulo">2. Elemento Subjetivo</div>
+                                <ul class="lista-desordenada">
+                                    <li><strong>Dolo de inducir:</strong> Voluntad de hacer surgir en otro la resolución delictiva</li>
+                                    <li>Conocimiento de que se está induciendo a cometer un delito específico</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ejemplo">
+                            <div class="ejemplo-titulo">💡 Ejemplos de Inducción</div>
+                            <div class="ejemplo-contenido">
+                                <div style="margin: 10px 0; padding: 12px; background: #E8F5E9; border-radius: 6px;">
+                                    <p style="font-weight: bold;">✅ SÍ es inducción:</p>
+                                    <p>A convence a B, quien no tenía intención de matar, para que mate a C. A ofrece dinero, argumentos, etc. B finalmente mata a C.</p>
+                                    <p style="margin-top: 8px; font-style: italic;">A es inductor (sancionado como autor)</p>
+                                </div>
+
+                                <div style="margin: 10px 0; padding: 12px; background: #FFEBEE; border-radius: 6px;">
+                                    <p style="font-weight: bold;">❌ NO es inducción:</p>
+                                    <ul style="margin-top: 8px; margin-left: 20px;">
+                                        <li>Si B ya tenía la intención de matar (sería complicidad)</li>
+                                        <li>Si la inducción es a delito indeterminado ("comete algún delito")</li>
+                                        <li>Si el inducido no llega ni a la tentativa</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 6: ALCANCE DEL ART. 15 N°3 -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">📜</span>
+                    ALCANCE DEL ART. 15 N° 3
+                </div>
+                <div class="contenido">
+                    
+                    <div class="articulo">
+                        <div class="articulo-numero">Art. 15 N° 3</div>
+                        <div class="articulo-texto">
+                            "Los que, <strong>concertados para su ejecución</strong>:
+                            <ul class="lista-desordenada" style="margin-top: 10px;">
+                                <li>Facilitan los medios con que se lleva a efecto el hecho</li>
+                                <li>Lo presencian sin tomar parte inmediata en él"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="nota-importante">
+                        <div class="nota-titulo">🔑 ELEMENTO CLAVE: El Concierto</div>
+                        <p>El elemento clave para la interpretación de este precepto está dado por la expresión:</p>
+                        <p style="margin-top: 10px; padding: 15px; background: white; border-radius: 8px; font-size: 1.1em; text-align: center;">
+                            <strong>"concertados para su ejecución"</strong>
+                        </p>
+                        <p style="margin-top: 15px;"><strong>Concierto:</strong> Acuerdo expreso o tácito, previo o coetáneo para cometer el delito</p>
+                    </div>
+
+                    <!-- PRIMERA HIPÓTESIS -->
+                    <div style="margin: 25px 0; padding: 25px; background: #E8F5E9; border-radius: 10px; border: 4px solid #4CAF50;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #2E7D32; margin-bottom: 15px;">1️⃣ PRIMERA HIPÓTESIS: Facilitan los medios</p>
+                        
+                        <div class="definicion">
+                            <div class="definicion-titulo">Conducta Típica</div>
+                            <p>Los que concertados para su ejecución: <strong>"Facilitan los medios con que se lleva a efecto el hecho"</strong></p>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 10px;">
+                            <p style="font-weight: bold; margin-bottom: 12px;">📦 ¿Qué son los "medios"?</p>
+                            <p style="margin-bottom: 10px;">Consiste en aportar los medios de cualquier índole:</p>
+                            
+                            <div class="comparacion">
+                                <div style="background: #E3F2FD; padding: 15px; border-radius: 8px; border-left: 4px solid #2196F3;">
+                                    <p style="font-weight: bold; color: #1565C0;">MEDIOS MATERIALES</p>
+                                    <ul class="lista-desordenada" style="margin-top: 10px;">
+                                        <li>Arma</li>
+                                        <li>Dinero</li>
+                                        <li>Automóvil</li>
+                                        <li>Herramientas</li>
+                                        <li>Escalera</li>
+                                    </ul>
+                                </div>
+
+                                <div style="background: #FFF3E0; padding: 15px; border-radius: 8px; border-left: 4px solid #FF9800;">
+                                    <p style="font-weight: bold; color: #E65100;">MEDIOS INMATERIALES</p>
+                                    <ul class="lista-desordenada" style="margin-top: 10px;">
+                                        <li>Información sobre modo de ejecución</li>
+                                        <li>Datos sobre objetos</li>
+                                        <li>Información sobre la víctima</li>
+                                        <li>Planos del lugar</li>
+                                        <li>Claves de acceso</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 15px; background: #FFFDE7; border-radius: 8px; border-left: 4px solid #FBC02D;">
+                            <p style="font-weight: bold; margin-bottom: 10px;">🎯 Finalidad de los medios:</p>
+                            <p>Pueden tener por objeto:</p>
+                            <ul class="lista-desordenada" style="margin-top: 10px;">
+                                <li>Hacer posible la ejecución del hecho</li>
+                                <li>Facilitarla, o</li>
+                                <li>Acelerarla</li>
+                            </ul>
+                        </div>
+
+                        <div class="nota-importante">
+                            <div class="nota-titulo">⚖️ CONTROVERSIA: ¿Autoría o Complicidad?</div>
+                            
+                            <div style="margin: 15px 0;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">🔒 INTERPRETACIÓN RESTRICTIVA:</p>
+                                <div style="background: white; padding: 15px; border-radius: 8px;">
+                                    <p>Los medios deben emplearse en la ejecución del hecho en términos tales que pueda afirmarse que el sujeto tiene el <strong>codominio del hecho</strong></p>
+                                    <p style="margin-top: 10px; font-style: italic;">Solo así puede ser considerado coautor</p>
+                                </div>
+                            </div>
+
+                            <div style="margin: 15px 0;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">🔓 INTERPRETACIÓN AMPLIA:</p>
+                                <div style="background: white; padding: 15px; border-radius: 8px;">
+                                    <p>Basta que exista <strong>concierto previo</strong> y que facilite los medios, para ser considerado autor según el art. 15 N° 3</p>
+                                    <p style="margin-top: 10px; font-style: italic;">No se requiere necesariamente codominio del hecho</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ejemplo">
+                            <div class="ejemplo-titulo">💡 Casos Prácticos</div>
+                            <div class="ejemplo-contenido">
+                                <div style="margin: 10px 0; padding: 12px; background: #E8F5E9; border-radius: 6px;">
+                                    <p style="font-weight: bold;">Caso 1: El que presta el auto</p>
+                                    <p style="margin-top: 8px;">A, B y C se conciertan para robar un banco. A presta el auto de fuga, B conduce, C entra al banco.</p>
+                                    <p style="margin-top: 8px;"><strong>Interpretación amplia:</strong> A es autor (15 N°3)</p>
+                                    <p style="margin-top: 5px;"><strong>Interpretación restrictiva:</strong> A es cómplice si no tiene codominio</p>
+                                </div>
+
+                                <div style="margin: 10px 0; padding: 12px; background: #FFF3E0; border-radius: 6px;">
+                                    <p style="font-weight: bold;">Caso 2: El que da información clave</p>
+                                    <p style="margin-top: 8px;">A proporciona planos detallados y claves del sistema de seguridad, sin los cuales el robo sería imposible.</p>
+                                    <p style="margin-top: 8px;"><strong>Interpretación restrictiva:</strong> Si su aporte es esencial y tiene codominio funcional → Coautor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEGUNDA HIPÓTESIS -->
+                    <div style="margin: 25px 0; padding: 25px; background: #F3E5F5; border-radius: 10px; border: 4px solid #9C27B0;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #6A1B9A; margin-bottom: 15px;">2️⃣ SEGUNDA HIPÓTESIS: Presencian el hecho</p>
+                        
+                        <div class="definicion">
+                            <div class="definicion-titulo">Conducta Típica</div>
+                            <p>Los que, concertados para su ejecución: <strong>"Presencian el hecho sin tomar parte inmediata en él"</strong></p>
+                        </div>
+
+                        <div style="margin: 20px 0;">
+                            <p style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">🔍 DOS INTERPRETACIONES:</p>
+                            
+                            <!-- INTERPRETACIÓN AMPLIA -->
+                            <div style="margin: 15px 0; padding: 20px; background: white; border-radius: 10px; border: 3px solid #FF5722;">
+                                <p style="font-size: 1.1em; font-weight: bold; color: #D84315; margin-bottom: 12px;">🔓 INTERPRETACIÓN AMPLIA</p>
+                                <p>Basta la <strong>presencia del individuo al momento del hecho</strong>, siempre que exista acuerdo delictivo</p>
+                                <div style="margin-top: 15px; padding: 12px; background: #FFEBEE; border-radius: 6px;">
+                                    <p style="font-style: italic;">La mera presencia física con concierto previo lo convierte en autor</p>
+                                </div>
+                            </div>
+
+                            <!-- INTERPRETACIÓN RESTRICTIVA -->
+                            <div style="margin: 15px 0; padding: 20px; background: white; border-radius: 10px; border: 3px solid #4CAF50;">
+                                <p style="font-size: 1.1em; font-weight: bold; color: #2E7D32; margin-bottom: 12px;">🔒 INTERPRETACIÓN RESTRICTIVA</p>
+                                
+                                <div style="margin: 10px 0; padding: 12px; background: #E8F5E9; border-radius: 6px;">
+                                    <p style="font-weight: bold; margin-bottom: 8px;">1. Sentido de "ejecución":</p>
+                                    <p>La palabra <strong>ejecución</strong> debe tomarse en su sentido estricto, como acuerdo para la ejecución del delito</p>
+                                </div>
+
+                                <div style="margin: 10px 0; padding: 12px; background: #E8F5E9; border-radius: 6px;">
+                                    <p style="font-weight: bold; margin-bottom: 8px;">2. Requisito de codominio:</p>
+                                    <p>Conforme al plan delictivo acordado, la presencia física del individuo debe significar un <strong>aporte a su realización</strong>, de modo que pueda afirmarse que posee <strong>codominio funcional del hecho</strong></p>
+                                </div>
+
+                                <div style="margin: 10px 0; padding: 12px; background: #E8F5E9; border-radius: 6px;">
+                                    <p style="font-weight: bold; margin-bottom: 8px;">3. Aporte imprescindible:</p>
+                                    <p>Su aporte, en este caso la pasividad, debe ser <strong>imprescindible</strong>, porque podría tomar parte en el hecho hasta el punto de impedirlo.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="caso-practico">
+                            <div class="caso-titulo">💡 CASOS PRÁCTICOS COMPARADOS</div>
+                            
+                            <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                                <p style="font-weight: bold; color: #D84315;">Caso 1: El "Campana" o "Loro"</p>
+                                <p style="margin-top: 8px;">A se queda afuera vigilando mientras B y C entran a robar. A avisará si llega la policía.</p>
+                                
+                                <div style="margin-top: 10px; padding: 10px; background: #FFF3E0; border-radius: 6px;">
+                                    <p><strong>Interpretación amplia:</strong> A es <span class="destacado">autor</span> por art. 15 N°3 (presencia con concierto)</p>
+                                </div>
+                                <div style="margin-top: 8px; padding: 10px; background: #E8F5E9; border-radius: 6px;">
+                                    <p><strong>Interpretación restrictiva:</strong> A es <span class="destacado">cómplice</span> porque no tiene codominio funcional del hecho (art. 16 o 15 N°3 como complicidad)</p>
+                                </div>
+                            </div>
+
+                            <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                                <p style="font-weight: bold; color: #1565C0;">Caso 2: El que presencia para dar seguridad</p>
+                                <p style="margin-top: 8px;">A presencia un homicidio para asegurar que B mate efectivamente a C. Su presencia intimida a la víctima y da confianza al ejecutor.</p>
+                                
+                                <div style="margin-top: 10px; padding: 10px; background: #E3F2FD; border-radius: 6px;">
+                                    <p><strong>Ambas interpretaciones:</strong> A es <span class="destacado">coautor</span> porque su presencia es funcional al plan y tiene codominio del hecho</p>
+                                </div>
+                            </div>
+
+                            <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                                <p style="font-weight: bold; color: #6A1B9A;">Caso 3: Mero espectador con concierto</p>
+                                <p style="margin-top: 8px;">A simplemente está presente por curiosidad, aunque había acordado previamente estar ahí, pero no aporta nada funcional.</p>
+                                
+                                <div style="margin-top: 10px; padding: 10px; background: #FFEBEE; border-radius: 6px;">
+                                    <p><strong>Interpretación amplia:</strong> A es <span class="destacado">autor</span> (presencia + concierto = autoría)</p>
+                                </div>
+                                <div style="margin-top: 8px; padding: 10px; background: #E8F5E9; border-radius: 6px;">
+                                    <p><strong>Interpretación restrictiva:</strong> A NO es autor porque su presencia no es funcional, carece de codominio. Podría ser <span class="destacado">cómplice</span> o incluso atípico</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 7: DELITOS DE INFRACCIÓN DE DEBER -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">⚖️</span>
+                    AUTORÍA EN DELITOS DE INFRACCIÓN DE DEBER
+                </div>
+                <div class="contenido">
+                    
+                    <div class="definicion">
+                        <div class="definicion-titulo">Concepto</div>
+                        <p>Son aquellos en los que la <strong>lesión del bien jurídico se produce mediante el quebrantamiento de un deber jurídico extrapenal</strong></p>
+                        <ul class="lista-desordenada" style="margin-top: 10px;">
+                            <li>Ej.: Civil, administrativo, procesal, profesional o de cualquier otra índole</li>
+                            <li>Conllevan un deber diferente del que emana de la norma punitiva</li>
+                            <li>Su infracción constituye:
+                                <ul style="margin-left: 20px; margin-top: 5px;">
+                                    <li>El fundamento del injusto del hecho, o</li>
+                                    <li>De su agravación o atenuación</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 25px 0;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #8B0000; margin-bottom: 15px;">📊 CASOS DE DELITOS DE INFRACCIÓN DE UN DEBER</p>
+                        
+                        <div style="margin: 20px 0; padding: 20px; background: #E3F2FD; border-radius: 10px; border: 4px solid #1976D2;">
+                            <p style="font-size: 1.15em; font-weight: bold; color: #0D47A1; margin-bottom: 15px;">A. DELITOS ESPECIALES PROPIOS</p>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">Características:</p>
+                                <ul class="lista-desordenada">
+                                    <li>El deber quebrantado <strong>fundamenta el injusto del hecho</strong></li>
+                                    <li>Incumbe sólo a quienes ostentan la <strong>calidad personal</strong> requerida</li>
+                                </ul>
+                            </div>
+
+                            <div class="ejemplo">
+                                <div class="ejemplo-titulo">💡 Ejemplos:</div>
+                                <div class="ejemplo-contenido">
+                                    <div style="margin: 10px 0; padding: 10px; background: #E8F5E9; border-radius: 6px;">
+                                        <p><strong>• Prevaricación judicial:</strong></p>
+                                        <p style="margin-top: 5px;">Sólo puede ser autor un <span class="destacado">JUEZ</span></p>
+                                    </div>
+                                    <div style="margin: 10px 0; padding: 10px; background: #FFF9E6; border-radius: 6px;">
+                                        <p><strong>• Negociaciones incompatibles:</strong></p>
+                                        <p style="margin-top: 5px;">Sólo puede ser autor un <span class="destacado">EMPLEADO PÚBLICO</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 20px; background: #FFF3E0; border-radius: 10px; border: 4px solid #F57C00;">
+                            <p style="font-size: 1.15em; font-weight: bold; color: #E65100; margin-bottom: 15px;">B. DELITOS DE OMISIÓN IMPROPIA</p>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">Características:</p>
+                                <ul class="lista-desordenadas">
+                                    <li>El deber recae en quien tiene la <strong>posición de garante</strong></li>
+                                    <li>Responde por no evitar el resultado que tenía el deber jurídico de evitar</li>
+                                </ul>
+                            </div>
+
+                            <div class="ejemplo">
+                                <div class="ejemplo-titulo">💡 Ejemplo:</div>
+                                <div class="ejemplo-contenido">
+                                    <p><strong>El padre respecto de su hijo de corta edad</strong></p>
+                                    <p style="margin-top: 8px;">Si el padre no alimenta a su hijo pequeño y este muere, el padre responde por homicidio por omisión impropia, porque tenía la posición de garante.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nota-importante">
+                        <div class="nota-titulo">🎯 CRITERIO DE AUTORÍA EN DELITOS DE INFRACCIÓN DE DEBER</div>
+                        
+                        <div class="comparacion" style="margin-top: 15px;">
+                            <div style="background: #E8F5E9; padding: 20px; border-radius: 10px; border: 3px solid #4CAF50;">
+                                <p style="font-weight: bold; color: #2E7D32; font-size: 1.1em; margin-bottom: 12px;">AUTOR (Intraneus)</p>
+                                <ul class="lista-desordenada">
+                                    <li>Sólo puede ser autor el <strong>intraneus</strong>, es decir, quien tiene el deber de que se trate</li>
+                                    <li><strong>Sin importar</strong> si tiene el dominio material del hecho</li>
+                                </ul>
+                            </div>
+
+                            <div style="background: #FFEBEE; padding: 20px; border-radius: 10px; border: 3px solid #D32F2F;">
+                                <p style="font-weight: bold; color: #B71C1C; font-size: 1.1em; margin-bottom: 12px;">PARTÍCIPE (Extraneus)</p>
+                                <ul class="lista-desordenada">
+                                    <li>El <strong>extraneus</strong> es el sujeto que no está especialmente obligado</li>
+                                    <li>Solo puede llegar a ser un <strong>partícipe</strong></li>
+                                    <li><strong>Aun cuando ostente</strong> el dominio material del hecho</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="caso-practico">
+                        <div class="caso-titulo">💡 CASO PRÁCTICO: Destrucción de documentos</div>
+                        <div class="caso-planteamiento">
+                            Un funcionario público encargado de custodiar unos documentos, le dice a su secretario que los destruya con pleno conocimiento de lo que realiza (art. 242: infidelidad en la custodia de documentos).
+                        </div>
+                        <div class="caso-solucion">
+                            <p style="font-weight: bold; margin-bottom: 10px;">SOLUCIÓN:</p>
+                            <ul class="lista-desordenada">
+                                <li><strong>El empleado público es AUTOR</strong> (tiene el deber de custodia)</li>
+                                <li><strong>Su secretario es sólo CÓMPLICE</strong> (no tiene el deber especial, aunque ejecutó materialmente)</li>
+                            </ul>
+                            <p style="margin-top: 15px; padding: 12px; background: #FFF9E6; border-radius: 6px;">
+                                ⚡ El dominio del hecho NO determina la autoría en estos delitos, sino <strong>la titularidad del deber</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="margin: 25px 0; padding: 20px; background: #F3E5F5; border-radius: 10px; border-left: 5px solid #9C27B0;">
+                        <p style="font-weight: bold; font-size: 1.1em; color: #6A1B9A; margin-bottom: 15px;">🔑 FORMAS DE AUTORÍA POSIBLES</p>
+                        <p style="margin-bottom: 12px;">En los delitos de infracción de deber pueden concurrir las <strong>3 formas de autoría</strong>:</p>
+                        
+                        <table class="tabla">
+                            <tr>
+                                <th style="width: 30%;">Forma de Autoría</th>
+                                <th>Ejemplo</th>
+                            </tr>
+                            <tr>
+                                <td><strong>1. Autoría Directa</strong></td>
+                                <td>El juez dicta personalmente una sentencia injusta (prevaricación)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Autoría Mediata</strong></td>
+                                <td>El juez induce a error a su secretario para que destruya expedientes (el juez es autor mediato)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Coautoría</strong></td>
+                                <td>Dos funcionarios públicos se reparten funciones para malversar fondos públicos (ambos tienen el deber especial)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 8: DELITOS DE PROPIA MANO -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">✋</span>
+                    AUTORÍA EN DELITOS DE PROPIA MANO
+                </div>
+                <div class="contenido">
+                    
+                    <div class="definicion">
+                        <div class="definicion-titulo">Concepto</div>
+                        <p>Sólo pueden realizarse mediante una <strong>intervención corporal del autor en la ejecución del hecho típico</strong></p>
+                        <p style="margin-top: 10px;">Sólo la <strong>realización personal de la conducta típica</strong> fundamenta la autoría</p>
+                    </div>
+
+                    <div class="nota-importante">
+                        <div class="nota-titulo">⚠️ IMPORTANCIA PRÁCTICA</div>
+                        <p style="font-size: 1.1em;"><strong>NO admiten autoría mediata ni coautoría</strong></p>
+                        <p style="margin-top: 10px;">Solo es posible la <span class="destacado">autoría directa</span></p>
+                    </div>
+
+                    <div style="margin: 25px 0;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #8B0000; margin-bottom: 15px;">📋 DOS GRUPOS SEGÚN ROXIN:</p>
+                        
+                        <!-- GRUPO A -->
+                        <div style="margin: 20px 0; padding: 20px; background: #E3F2FD; border-radius: 10px; border: 4px solid #1976D2;">
+                            <p style="font-size: 1.15em; font-weight: bold; color: #0D47A1; margin-bottom: 15px;">A) LOS DELITOS DE ESTADO</p>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">Características:</p>
+                                <ul class="lista-desordenada">
+                                    <li>Sancionan una <strong>actitud personal</strong>, una condición, un tipo de personalidad asocial o un modo de vida</li>
+                                    <li>Pueden <strong>no depender de la voluntad del sujeto</strong></li>
+                                    <li>Son manifestaciones de <strong>Derecho Penal de autor</strong></li>
+                                    <li>No resulta necesaria una concreta lesión de un bien jurídico</li>
+                                    <li>Ni una conducta típica descrita con exactitud</li>
+                                </ul>
+                            </div>
+
+                            <div style="background: #FFEBEE; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                <p style="font-weight: bold; color: #D32F2F; margin-bottom: 10px;">⚠️ Sobre inducción y coautoría:</p>
+                                <ul class="lista-desordenada">
+                                    <li>Se puede inducir a otros a tales estilos de vida, pero <strong>no se da el dominio del hecho</strong></li>
+                                    <li>Tampoco hay <strong>división del trabajo funcional</strong></li>
+                                    <li>A lo sumo podrían vagabundear 2 personas amigas, pero son <strong>autores simples y NO coautores</strong></li>
+                                </ul>
+                            </div>
+
+                            <div class="ejemplo">
+                                <div class="ejemplo-titulo">💡 Ejemplo (Tipos Derogados):</div>
+                                <div class="ejemplo-contenido">
+                                    <p><strong>Los derogados tipos penales de vagancia y mendicidad</strong></p>
+                                    <p style="margin-top: 8px;">Estos tipos sancionaban un modo de vida o estado personal, no una conducta específica que lesione un bien jurídico concreto.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GRUPO B -->
+                        <div style="margin: 20px 0; padding: 20px; background: #FFF3E0; border-radius: 10px; border: 4px solid #F57C00;">
+                            <p style="font-size: 1.15em; font-weight: bold; color: #E65100; margin-bottom: 15px;">B) DELITOS VINCULADOS A COMPORTAMIENTOS, SIN LESIÓN DE BIEN JURÍDICO</p>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">Características:</p>
+                                <ul class="lista-desordenada">
+                                    <li>Son <strong>hechos punibles sin víctima</strong></li>
+                                    <li>Sancionan conductas que contradicen las <strong>convicciones morales de un grupo social</strong></li>
+                                    <li><strong>NO lesionan o ponen en peligro un bien jurídico</strong></li>
+                                    <li>Se reprueba la supuesta inmoralidad de la conducta</li>
+                                    <li>Sólo pueden ser cometidos <strong>directa, dolosa y libremente</strong></li>
+                                </ul>
+                            </div>
+
+                            <div class="ejemplo">
+                                <div class="ejemplo-titulo">💡 Ejemplo que subsiste:</div>
+                                <div class="ejemplo-contenido">
+                                    <p><strong>El tipo penal de sodomía consentida del art. 365 CP</strong></p>
+                                    <p style="margin-top: 8px;">Este delito sanciona una conducta sexual consensuada entre adultos del mismo sexo, sin que exista una víctima ni un bien jurídico lesionado en sentido estricto.</p>
+                                    <p style="margin-top: 8px; font-style: italic;">(Rodríguez Collao, Delitos sexuales, 2014, p. 339 y ss.)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 9: AUTORÍA EN DELITOS IMPRUDENTES -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">⚠️</span>
+                    DISTINCIÓN ENTRE AUTOR Y PARTÍCIPES EN DELITOS IMPRUDENTES
+                </div>
+                <div class="contenido">
+                    
+                    <div style="margin: 20px 0; padding: 20px; background: #FFF9E6; border-radius: 10px; border-left: 5px solid #FFA726;">
+                        <p style="font-weight: bold; font-size: 1.1em; color: #E65100; margin-bottom: 15px;">🤔 CASOS PROBLEMÁTICOS (Stratenwerth, p. 527):</p>
+                        
+                        <div class="caso-practico">
+                            <div class="caso-titulo">Caso A: Los operarios de construcción</div>
+                            <div class="caso-planteamiento">
+                                2 operarios de construcción arrojan imprudentemente una viga desde el techo hacia una calle muy concurrida
+                            </div>
+                        </div>
+
+                        <div class="caso-practico">
+                            <div class="caso-titulo">Caso B: El pasajero apurado</div>
+                            <div class="caso-planteamiento">
+                                El pasajero de un taxi, por la prisa que lleva, induce al conductor a conducir a exceso de velocidad
+                            </div>
+                        </div>
+
+                        <div class="caso-practico">
+                            <div class="caso-titulo">Caso C: El acompañante halagador</div>
+                            <div class="caso-planteamiento">
+                                El acompañante del conductor de un coche sport comenta halagadoramente la forma audaz que su amigo tiene de conducir
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin: 25px 0;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #8B0000; margin-bottom: 15px;">⚖️ POSICIONES DOCTRINALES:</p>
+                        
+                        <!-- DOCTRINA ALEMANA -->
+                        <div style="margin: 20px 0; padding: 20px; background: #E3F2FD; border-radius: 10px; border: 4px solid #1976D2;">
+                            <p style="font-size: 1.15em; font-weight: bold; color: #0D47A1; margin-bottom: 15px;">🇩🇪 DOCTRINA ALEMANA</p>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">En delitos DOLOSOS:</p>
+                                <p>La distinción sólo se da en los delitos dolosos. En ellos, la autoría supone la <strong>conducción dolosa del acontecimiento típico</strong> por el autor, como condición del dominio del hecho.</p>
+                            </div>
+
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <p style="font-weight: bold; margin-bottom: 10px;">En delitos IMPRUDENTES:</p>
+                                <p style="margin-bottom: 10px;">Rige la <strong>teoría unitaria de autor</strong></p>
+                                <p style="padding: 12px; background: #E8F5E9; border-radius: 6px; margin-top: 10px;">
+                                    Es autor, <strong>todo aquel que haya contribuido descuidadamente a causar el peligro realizado en el resultado</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DOCTRINA ESPAÑOLA -->
+                        <div style="margin: 20px 0; padding: 20px; background: #FFF3E0; border-radius: 10px; border: 4px solid #F57C00;">
+                            <p style="font-size: 1.15em; font-weight: bold; color: #E65100; margin-bottom: 15px;">🇪🇸 DOCTRINA ESPAÑOLA</p>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <p>Parte de la doctrina y la jurisprudencia, admiten la <strong>distinción entre autores y partícipes, también en los delitos imprudentes</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- DOCTRINA CHILENA -->
+                        <div style="margin: 20px 0; padding: 25px; background: #E8F5E9; border-radius: 10px; border: 4px solid #4CAF50;">
+                            <p style="font-size: 1.2em; font-weight: bold; color: #2E7D32; margin-bottom: 15px;">🇨🇱 DOCTRINA CHILENA (Opinión Dominante)</p>
+                            
+                            <div class="nota-importante">
+                                <div class="nota-titulo">✅ POSICIÓN MAYORITARIA</div>
+                                <p style="font-size: 1.1em; margin-bottom: 15px;">El sistema diferenciado de autoría y participación rige <strong>sólo para los delitos dolosos</strong></p>
+                            </div>
+
+                            <div style="background: white; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                                <p style="font-weight: bold; font-size: 1.1em; margin-bottom: 12px; color: #1B5E20;">En los delitos imprudentes rige el concepto unitario de autor</p>
+                                <p style="margin-bottom: 15px;"><strong>Todos los intervinientes son autores</strong></p>
+                                
+                                <div style="margin: 15px 0; padding: 15px; background: #E8F5E9; border-radius: 8px;">
+                                    <p style="font-weight: bold; margin-bottom: 10px;">Fundamentos:</p>
+                                    <ul class="lista-desordenada">
+                                        <li>Por la <strong>imposibilidad de acuerdos convergentes</strong> (no hay dolo común)</li>
+                                        <li>Por su cualidad de <strong>infracción de un deber individual de cuidado</strong></li>
+                                        <li>Cada uno responde por su propia imprudencia</li>
+                                    </ul>
+                                    <p style="margin-top: 12px; font-style: italic;">(ETCHEBERRY, T I, p. 323; CURY, pp. 623, 640, etc.)</p>
+                                </div>
+                            </div>
+
+                            <div class="ejemplo">
+                                <div class="ejemplo-titulo">💡 Aplicación a los casos:</div>
+                                <div class="ejemplo-contenido">
+                                    <div style="margin: 10px 0; padding: 12px; background: white; border-radius: 6px;">
+                                        <p style="font-weight: bold;">Caso A (operarios):</p>
+                                        <p style="margin-top: 5px;">Ambos operarios son <span class="destacado">AUTORES</span> de cuasidelito de homicidio</p>
+                                    </div>
+
+                                    <div style="margin: 10px 0; padding: 12px; background: white; border-radius: 6px;">
+                                        <p style="font-weight: bold;">Caso B (pasajero del taxi):</p>
+                                        <p style="margin-top: 5px;">Tanto el pasajero como el conductor son <span class="destacado">AUTORES</span> si ambos actuaron imprudentemente</p>
+                                    </div>
+
+                                    <div style="margin: 10px 0; padding: 12px; background: white; border-radius: 6px;">
+                                        <p style="font-weight: bold;">Caso C (acompañante):</p>
+                                        <p style="margin-top: 5px;">Si el acompañante actuó imprudentemente al reforzar la conducción peligrosa, es <span class="destacado">AUTOR</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin: 25px 0; padding: 20px; background: #F3E5F5; border-radius: 10px; border-left: 5px solid #9C27B0;">
+                        <p style="font-weight: bold; font-size: 1.1em; color: #6A1B9A; margin-bottom: 15px;">📌 ENCUBRIMIENTO</p>
+                        <div style="background: white; padding: 15px; border-radius: 8px;">
+                            <ul class="lista-desordenada">
+                                <li><strong>Dudoso status de participación</strong></li>
+                                <li>El encubridor actúa con <strong>posterioridad a la ejecución del hecho</strong></li>
+                                <li>Se acepta el <strong>encubrimiento de delitos imprudentes</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN FINAL: RESUMEN CONCLUSIONES -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">📝</span>
+                    CONCLUSIONES Y CUADRO RESUMEN FINAL
+                </div>
+                <div class="contenido">
+                    
+                    <div style="background: linear-gradient(135deg, #8B0000 0%, #B22222 100%); padding: 25px; border-radius: 15px; color: white; margin-bottom: 30px;">
+                        <p style="font-size: 1.3em; font-weight: bold; text-align: center; margin-bottom: 15px;">🎯 PUNTOS CLAVE PARA RECORDAR</p>
+                        <ul class="lista-desordenada" style="line-height: 2; font-size: 1.05em;">
+                            <li>La autoría y participación es parte de la <strong>teoría del tipo</strong></li>
+                            <li>La <strong>participación es accesoria</strong> a la autoría (principio de accesoriedad)</li>
+                            <li>Existen múltiples teorías sobre el concepto de autor, siendo la del <strong>dominio del hecho</strong> la dominante</li>
+                            <li>En Chile, el art. 15 contempla tanto autoría como participación (inducción)</li>
+                            <li>En <strong>delitos de infracción de deber</strong>, el criterio es la titularidad del deber, no el dominio del hecho</li>
+                            <li>En <strong>delitos imprudentes</strong> rige el concepto unitario de autor (todos son autores)</li>
+                            <li>Los <strong>delitos de propia mano</strong> solo admiten autoría directa</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 30px 0;">
+                        <p style="font-size: 1.3em; font-weight: bold; color: #8B0000; margin-bottom: 20px; text-align: center;">📊 CUADRO RESUMEN SISTEMÁTICO</p>
+                        
+                        <table class="tabla">
+                            <thead>
+                                <tr>
+                                    <th colspan="3" style="background: #6A1B9A; text-align: center; font-size: 1.1em;">FORMAS DE INTERVENCIÓN EN EL DELITO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #E3F2FD;">
+                                    <td colspan="3" style="font-weight: bold; font-size: 1.05em; padding: 15px;">
+                                        <strong>I. AUTORÍA</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 25%;"><strong>1. Autor Inmediato</strong></td>
+                                    <td style="width: 40%;">Realiza personalmente la conducta típica</td>
+                                    <td>PE / Art. 15 N°1</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2. Autor Mediato</strong></td>
+                                    <td>Domina la voluntad de quien ejecuta el hecho</td>
+                                    <td>Art. 15 N°2, 1ª parte</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3. Coautor</strong></td>
+                                    <td>Codominio funcional del hecho por división de tareas</td>
+                                    <td>Art. 15 N°1 y N°3</td>
+                                </tr>
+                                
+                                <tr style="background: #FFF3E0;">
+                                    <td colspan="3" style="font-weight: bold; font-size: 1.05em; padding: 15px;">
+                                        <strong>II. PARTICIPACIÓN</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>1. Inductor</strong></td>
+                                    <td>Hace surgir en otro la resolución delictiva (partícipe castigado como autor)</td>
+                                    <td>Art. 15 N°2, 2ª parte</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2. Cómplice</strong></td>
+                                    <td>Coopera en la ejecución con actos anteriores o simultáneos</td>
+                                    <td>Art. 15 N°3 / Art. 16</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3. Encubridor</strong></td>
+                                    <td>Interviene con posterioridad a la ejecución</td>
+                                    <td>Art. 17</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="margin: 30px 0; padding: 25px; background: #FFFDE7; border-radius: 15px; border: 3px solid #FBC02D;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #F57F17; margin-bottom: 20px; text-align: center;">⚖️ CRITERIOS DISTINTIVOS SEGÚN TIPO DE DELITO</p>
+                        
+                        <table class="tabla">
+                            <tr>
+                                <th style="width: 30%;">Tipo de Delito</th>
+                                <th>Criterio de Autoría</th>
+                                <th style="width: 25%;">Formas Admitidas</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Delitos de Dominio</strong></td>
+                                <td>Dominio del hecho (de la acción, de la voluntad o funcional)</td>
+                                <td>Inmediata, Mediata, Coautoría</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Delitos de Infracción de Deber</strong></td>
+                                <td>Titularidad del deber especial (intraneus)</td>
+                                <td>Inmediata, Mediata, Coautoría</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Delitos de Propia Mano</strong></td>
+                                <td>Realización personal y corporal</td>
+                                <td>Solo Inmediata</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Delitos Imprudentes</strong></td>
+                                <td>Concepto unitario (todos son autores)</td>
+                                <td>Solo Autoría (no hay participación)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div style="margin: 30px 0;">
+                        <p style="font-size: 1.2em; font-weight: bold; color: #8B0000; margin-bottom: 20px; text-align: center;">🔍 ESQUEMA DE ANÁLISIS PRÁCTICO</p>
+                        
+                        <div class="esquema">
+                            <div class="esquema-titulo">¿CÓMO DETERMINAR SI ALGUIEN ES AUTOR O PARTÍCIPE?</div>
+                            
+                            <div class="nivel nivel-1">
+                                <p style="font-weight: bold; margin-bottom: 8px;">PASO 1: Identificar el tipo de delito</p>
+                                <ul style="margin-left: 20px;">
+                                    <li>¿Es doloso o imprudente?</li>
+                                    <li>¿Es de dominio, infracción de deber o propia mano?</li>
+                                </ul>
+                            </div>
+
+                            <div class="nivel nivel-1">
+                                <p style="font-weight: bold; margin-bottom: 8px;">PASO 2: Aplicar el criterio correspondiente</p>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Si es imprudente:</strong> Todos son autores</li>
+                                    <li><strong>Si es de dominio:</strong> ¿Tiene dominio del hecho?</li>
+                                    <li><strong>Si es de infracción de deber:</strong> ¿Tiene el deber especial?</li>
+                                    <li><strong>Si es de propia mano:</strong> ¿Lo hizo personalmente?</li>
+                                </ul>
+                            </div>
+
+                            <div class="nivel nivel-1">
+                                <p style="font-weight: bold; margin-bottom: 8px;">PASO 3: Determinar la forma específica</p>
+                                <ul style="margin-left: 20px;">
+                                    <li>¿Realizó actos ejecutivos? → Autor inmediato</li>
+                                    <li>¿Dominó la voluntad de otro? → Autor mediato</li>
+                                    <li>¿Codominio funcional con otros? → Coautor</li>
+                                    <li>¿Hizo surgir la resolución delictiva? → Inductor</li>
+                                    <li>¿Cooperó sin dominio? → Cómplice</li>
+                                    <li>¿Intervino después? → Encubridor</li>
+                                </ul>
+                            </div>
+
+                            <div class="nivel nivel-2">
+                                <p style="font-weight: bold; margin-bottom: 8px;">PASO 4: Verificar los principios de participación</p>
+                                <ul style="margin-left: 20px;">
+                                    <li>Convergencia</li>
+                                    <li>Accesoriedad</li>
+                                    <li>Exterioridad</li>
+                                    <li>Comunicabilidad</li>
+                                </ul>
+                            </div>
+
+                            <div class="nivel nivel-3">
+                                <p style="font-weight: bold; text-align: center;">CONCLUSIÓN: Calificación de la intervención y pena aplicable</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin: 30px 0; padding: 25px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); border-radius: 15px; color: white;">
+                        <p style="font-size: 1.3em; font-weight: bold; text-align: center; margin-bottom: 20px;">📚 BIBLIOGRAFÍA ESENCIAL</p>
+                        <ul class="lista-desordenada" style="line-height: 2;">
+                            <li><strong>Roxin, Claus:</strong> "Autoría y dominio del hecho" (1963)</li>
+                            <li><strong>Jakobs, Günther:</strong> Teoría de la competencia</li>
+                            <li><strong>Etcheberry, Alfredo:</strong> Derecho Penal, Tomo II</li>
+                            <li><strong>Cury, Enrique:</strong> Derecho Penal, Parte General</li>
+                            <li><strong>Garrido Montt, Mario:</strong> Derecho Penal, Tomo II</li>
+                            <li><strong>Politoff, Matus y Ramírez:</strong> Lecciones de Derecho Penal</li>
+                            <li><strong>Mir Puig, Santiago:</strong> Derecho Penal, Parte General</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 30px 0; padding: 30px; background: #E8F5E9; border-radius: 15px; border: 4px solid #4CAF50; text-align: center;">
+                        <p style="font-size: 1.5em; font-weight: bold; color: #2E7D32; margin-bottom: 15px;">✅ FIN DEL MÓDULO 4</p>
+                        <p style="font-size: 1.1em; color: #1B5E20; line-height: 1.8;">
+                            Has completado el estudio de <strong>Autoría y Participación</strong><br>
+                            Este material cubre todo el contenido necesario para el examen<br>
+                            de Derecho Penal II - 4° Año
+                        </p>
+                        <p style="margin-top: 20px; font-size: 1.05em; color: #388E3C;">
+                            📖 Recuerda repasar los ejemplos prácticos y casos<br>
+                            ⚖️ Estudia bien las diferencias entre las teorías<br>
+                            🎯 Practica con la identificación de autores y partícipes
+                        </p>
+                    </div>
+
+                    <div style="margin: 30px 0; padding: 20px; background: #FFF9E6; border-radius: 10px; border-left: 5px solid #FFA726;">
+                        <p style="font-weight: bold; font-size: 1.1em; color: #E65100; margin-bottom: 12px;">💡 CONSEJO FINAL PARA EL EXAMEN:</p>
+                        <ul class="lista-desordenada" style="line-height: 1.9;">
+                            <li>Siempre identifica primero el <strong>tipo de delito</strong> (dominio, infracción de deber, propia mano, imprudente)</li>
+                            <li>Domina la diferencia entre <strong>interpretación amplia y restrictiva</strong> del art. 15</li>
+                            <li>Recuerda que en Chile la <strong>inducción se castiga como autoría</strong> pero es participación</li>
+                            <li>En delitos imprudentes: <strong>concepto unitario</strong> = todos autores</li>
+                            <li>En delitos de infracción de deber: lo que importa es el <strong>deber</strong>, no el dominio</li>
+                            <li>Practica con casos concretos para aplicar la teoría</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
